@@ -424,7 +424,7 @@ body, html {
 
 .impact-statistics {
   background-color: #EACCEB;
-  padding-top: 100px;
+  padding: 100px 0 100px 0;
   
 }
 
@@ -557,3 +557,87 @@ body, html {
     .impact-statistics .row.align-items-center.my-4.last-card .col-md-6 { order: 1; }
 }
 
+
+/* TESTIMONIALS/PARTNERSHIP SECTION */
+.testimonials-partnership {
+   background-color: #f8f9fa;
+  padding: 100px 0 100px 0;
+}
+
+.testimonials-card {
+  margin: 0 100px 0 100px;
+}
+
+.testimonials-partnership .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonials-partnership .card .gradient-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+
+}
+
+.testimonials-partnership .card-img-top {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.testimonials-partnership .card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.testimonials-partnership .card-title {
+    margin-bottom: 0.5rem;
+}
+
+.testimonials-partnership .partner-logo {
+    display: inline-block;
+    max-width: 140px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.testimonials-partnership .partner-logo:hover {
+    filter: grayscale(0%);
+}
+
+.testimonials-partnership .partner-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.testimonials-partnership .logo-placeholder {
+    width: 150px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px dashed #ccc;
+    color: #6c757d;
+    font-style: italic;
+    padding: 10px;
+}
