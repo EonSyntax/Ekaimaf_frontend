@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EKAIMAF</title>
+
+  <!-- FAVICONS -->
+  <link rel="icon" sizes="512x512" href="./assets/images/favicon_io/android-chrome-512x512.png">
+  <link rel="icon" sizes="192x192" href="./assets/images/favicon_io/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="./assets/images/favicon_io/site.webmanifest">
+  <link rel="icon" href="./assets/images/favicon_io/favicon.ico" />
+
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero-section">
+    <div class="gradient-overlay1"></div>
+    <div class="gradient-overlay2"></div>
+    <div class="gradient-overlay3"></div>
+    <div class="gradient-overlay4"></div>
+    <div class="gradient-overlay5"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/images/logo.png" alt="Logo" class="logo">
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-items collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About <i class="bi bi-chevron-down small ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Programs <i class="bi bi-chevron-down small ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Impact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="btn btn-warning" href="#" role="button" id="getInvolvedDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Get Involved <i class="bi bi-chevron-down small ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">ANIMAL KINGDOM</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+      <div class="hero-content text-white">
+        <h1>Empowering Lives, Sustaining Hope.</h1>
+        <p class="">
+          Together, we build stronger communities <br>one meal, one skill, one opportunity at a time.
+        </p>
+        <a href="#" class="donate btn btn-warning">Donate Now</a>
+      </div>
+      
+      <div
+      id="heroCarousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      >
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./assets/images/hero-bg1.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/images/hero-bg2.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/images/hero-bg3.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/images/hero-bg4.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/images/hero-bg5.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/images/hero-bg6.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/images/hero-bg7.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/images/hero-bg8.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+    <section class="about-ekaimaf">
+      <div class="container">
+        <div class="section-text">
+          <h2 class="fw-bold">About ECAF</h2>
+          <h4 class="lead">Driven by Compassion. Committed to Change.</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-5 col-md-12">
+            <div class="about-text">
+              <p>Ekaima Charitable Aid Foundation (ECAF) is a non-profit organization transforming lives through sustainable development. We empower communities across Africa to rise above hunger, poverty, and inequality—building a future rooted in dignity, opportunity, and hope.</p>
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-12">
+            <div class="about-images">
+              <div class="image-collage">
+                <img src="./assets/images/hero-bg7.png" alt="People farming in Africa" class="collage-img img-1">
+                <img src="https://ugc.same-assets.com/LbEUJMBVFsa-NIXaE9hol5aBnrpzaDP5.jpeg" alt="African children sitting in a row outdoors" class="collage-img img-2">
+                <img src="https://ugc.same-assets.com/cctgovYM8KXtg5hshkmmhp5N3-eajZBU.jpeg" alt="Outdoor community gathering in Africa" class="collage-img img-3">
+                <img src="https://ugc.same-assets.com/dtcT_VXqOcEAOTXR3QqKfGmyK0IuAVdB.jpeg" alt="Women receiving aid in Africa" class="collage-img img-4">
+                <img src="https://ugc.same-assets.com/UnPgaR1oMxuDyvHFqzW81TLx-kpwCIV-.jpeg" alt="Women in a classroom in Africa" class="collage-img img-5">
+                <img src="https://ugc.same-assets.com/HHuZoN-14Fg_ihmMalghdxulPw9ZohYK.jpeg" alt="African student receiving certificate" class="collage-img img-6">
+              </div>
+              <img src="https://ugc.same-assets.com/oF_7ZNY8_D08h46vLDZPwGnPEMGF2vNq.png" alt="Food Icon" class="icon icon-food">
+              <img src="https://ugc.same-assets.com/_ZON-8WD8J9Tdh1l8LXCnpELMvUPSivR.png" alt="Education Icon" class="icon icon-education">
+              <img src="https://ugc.same-assets.com/STuJuLeVAs1fZmsjGDgnzXWUOzSFLH1n.jpeg" alt="Community Icon" class="icon icon-community">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Highlights Section -->
+    <section class="highlights-section">
+    <div class="container">
+      <div class="section-text">
+        <h2 class="fw-bold">PROGRAM HIGHLIGHTS</h2>
+        <h4 class="lead">Empowering people through hands-on solutions that last.</h4>
+      </div>
+
+      <div class="custom-carousel">
+        <button class="highlight-btn prev" aria-label="Previous"><span class="icon"></span></button>
+        <div class="viewport">
+          <div class="track">
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="./assets/images/highlight1.jpg" alt="Community visitation program" />
+                <div class="highlight-caption">
+                  Our No one left behind Community Visitation program to an elderly widow at Ikot Ebok in Eket LGA. Visit took place as part of our sharing the spirit of Christmas in December 2025.
+                </div>
+              </article>
+            </div>
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="./assets/images/highlight2.png" alt="Hospital outreach" />
+                <div class="highlight-caption">
+                  Our sharing the spirit of Christmas visitation to patients at a teaching hospital in Uyo, Akwa Ibom state, Nigeria.
+                </div>
+              </article>
+            </div>
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="./assets/images/highlight1.jpg" alt="Back-to-school drive" />
+                <div class="highlight-caption">
+                  Back-to-school drive providing backpacks, books and mentorship for children in rural communities.
+                </div>
+              </article>
+            </div>
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="./assets/images/highlight2.png" alt="Food relief distribution" />
+                <div class="highlight-caption">
+                  Food relief distribution reaching households with staple foods and hygiene packs during the holiday season.
+                </div>
+              </article>
+            </div>
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="./assets/images/highlight1.jpg" alt="Women empowerment workshop" />
+                <div class="highlight-caption">
+                  Women empowerment workshop on financial literacy, small business skills, and peer support.
+                </div>
+              </article>
+            </div>
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="./assets/images/highlight2.png" alt="Community health outreach" />
+                <div class="highlight-caption">
+                  Community health outreach offering free screenings and medications in partnership with local clinics.
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <button class="highlight-btn next" aria-label="Next"><span class="icon"></span></button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- IMPACT STAT SECTION -->
+  <section class="impact-statistics">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-text">
+                  <h2 class="fw-bold">PROGRAM HIGHLIGHTS</h2>
+                  <h4 class="lead">Empowering people through hands-on solutions that last.</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center my-4 first-card">
+            <div class="col-md-6 offset-md-2">
+                <div class="stat-card">
+                    <h3><span class="num">15+</span> OUTREACHES</h3>
+                    <p>community feeding outreaches</p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <img src="./assets/images/fruitgift.png" alt="Icon" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="co">
+          <div class="row align-items-center my-4 middle-card">
+            <div class="col-md-2" >
+              <img src="./assets/images/trainingicon.png" style="margin-left: 100px;" alt="Icon" class="img-fluid">
+            </div>
+              <div class="col-md-6">
+                <div class="stat-card">
+                  <h3><span class="num">500+</span> TRAININGS</h3>
+                  <p>women trained in vocational skills</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <img src="./assets/images/strength.png" alt="Icon" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+        <div class="row align-items-center my-4 middle-card">
+            <div class="col-md-2">
+                 <img src="./assets/images/academy.png" style="margin-left: 200px;" alt="Icon" class="img-fluid">
+            </div>
+            <div class="col-md-6 offset-md-1">
+                <div class="stat-card">
+                    <h3><span class="num">200+</span> SCHOLARSHIPS</h3>
+                    <p>students supported through scholarships</p>
+                </div>
+            </div>
+             <div class="col-md-2">
+                <img src="./assets/images/loveandleaf.png" alt="Icon" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="row align-items-center my-4 middle-card">
+             <div class="col-md-2">
+                <img src="./assets/images/supportlove.png" style="margin-left: 300px;" alt="Icon" class="img-fluid">
+            </div>
+            <div class="col-md-6 offset-md-2">
+                <div class="stat-card">
+                    <h3><span class="num">1400+</span> HEALTHCARE</h3>
+                    <p>people received healthcare support</p>
+                </div>
+            </div>
+             <div class="col-md-2">
+                <img src="./assets/images/givingcare.png" alt="Icon" class="img-fluid">
+            </div>
+        </div>
+            <div>
+                 <p class="slogan">Every number tells <br/> a story of hope restored.</p>
+            </div>
+        <!-- <div class="row align-items-center my-4 slogan-row">
+            <div class="col-12">
+                 <p class="slogan">Every number tells <br/> a story of hope restored.</p>
+            </div>
+        </div> -->
+
+        <div class="row align-items-center my-4 last-card">
+            <div class="col-md-2">
+                <img src="./assets/images/shovel.png" style="margin-left: 350px;" alt="Icon" class="img-fluid">
+            </div>
+            <div class="col-md-6 offset-md-3">
+                <div class="stat-card">
+                    <h3><span class="num">20+</span> SUPPORT</h3>
+                    <p>families supported with farming kits</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    // Highlight Custom slider: move by one item per click; responsive widths control visible items
+    (function () {
+      const carousel = document.querySelector('.custom-carousel');
+      if (!carousel) return;
+      const viewport = carousel.querySelector('.viewport');
+      const track = carousel.querySelector('.track');
+      const prev = carousel.querySelector('.prev');
+      const next = carousel.querySelector('.next');
+      const items = Array.from(track.querySelectorAll('.item'));
+
+      let offset = 0;
+
+      function metrics() {
+        const first = items[0];
+        const itemWidth = first.getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        const step = itemWidth + gap; // move exactly one card
+        const max = Math.max(0, track.scrollWidth - viewport.clientWidth);
+        return { step, max };
+      }
+
+      function apply() {
+        const { max } = metrics();
+        offset = Math.max(0, Math.min(offset, max));
+        track.style.transform = `translateX(${-offset}px)`;
+        const disabledPrev = offset <= 0;
+        const disabledNext = offset >= max - 1;
+        prev.disabled = disabledPrev;
+        next.disabled = disabledNext;
+        prev.setAttribute('aria-disabled', String(disabledPrev));
+        next.setAttribute('aria-disabled', String(disabledNext));
+      }
+
+      prev.addEventListener('click', function () {
+        const { step } = metrics();
+        offset -= step;
+        apply();
+      });
+      next.addEventListener('click', function () {
+        const { step } = metrics();
+        offset += step;
+        apply();
+      });
+
+      window.addEventListener('resize', apply);
+      apply();
+    })();
+  </script>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

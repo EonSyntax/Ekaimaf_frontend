@@ -1,0 +1,92 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h2 {
+    color: #4a0072;
+    position: relative;
+    padding-left: 30px;
+}
+
+h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: 80%;
+    width: 8px;
+    background-color: #f39c12;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    height: 80%;
+    width: 8px;
+    background-color: #f39c12;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0) 100%);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+}
+
+.partner-logo {
+    display: inline-block;
+    max-width: 140px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+}
+
+.partner-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.logo-placeholder {
+    width: 150px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px dashed #ccc;
+    color: #6c757d;
+    font-style: italic;
+    padding: 10px;
+}

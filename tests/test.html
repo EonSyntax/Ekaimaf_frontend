@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Highlights - Excart</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --accent: #5a2b82; /* screenshot purple */
+      --accent-600: #4a1f6b;
+      --text-dark: #1f1231;
+    }
+
+    body {
+      font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+        "Segoe UI Emoji";
+      color: #1d1b20;
+      background-color: #fff;
+    }
+
+    .highlights-section {
+      padding: clamp(2rem, 3vw, 3rem) 0 clamp(3rem, 6vw, 4rem);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #5a2b82;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 36px;
+      background: #5a2b82;
+      border-radius: 2px;
+    }
+
+    .section-title {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+      margin: 0.25rem 0 0.5rem;
+    }
+
+    .section-subtitle {
+      color: #5f5a67;
+      font-size: clamp(0.95rem, 1.6vw, 1.125rem);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Highlight card */
+    .highlight-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #0b0213;
+      box-shadow: 0 8px 22px rgba(32, 9, 51, 0.16);
+    }
+    .highlight-card img {
+      width: 100%;
+      height: clamp(200px, 32vw, 320px);
+      object-fit: cover;
+      display: block;
+    }
+    .highlight-caption {
+      background: var(--accent);
+      color: #fff;
+      padding: 1rem 1.125rem;
+      font-size: 0.95rem;
+      line-height: 1.35;
+    }
+
+    /* Carousel controls: circular purple buttons */
+    .carousel {
+      overflow: visible;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      position: absolute;
+      width: 3.25rem;
+      height: 3.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background-color: var(--accent);
+      opacity: 1;
+      transition: background-color 0.2s ease;
+      box-shadow: 0 6px 16px rgba(32, 9, 51, 0.25);
+    }
+    .carousel-control-prev { left: -1.2rem; }
+    .carousel-control-next { right: -1.2rem; }
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover { background-color: var(--accent-600); }
+
+    /* Make default chevrons visible on purple */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(1) grayscale(100%);
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    /* On small screens, keep controls inside container */
+    @media (max-width: 575.98px) {
+      .carousel-control-prev { left: 0.25rem; }
+      .carousel-control-next { right: 0.25rem; }
+    }
+
+    /* Custom slider */
+    .custom-carousel { position: relative; }
+    .custom-carousel .viewport {
+      overflow: hidden;
+      touch-action: none; /* disable swipe */
+    }
+    .custom-carousel .track {
+      display: flex;
+      gap: 1rem;
+      will-change: transform;
+      transform: translateX(0);
+      transition: transform 400ms ease;
+    }
+    .custom-carousel .item { flex: 0 0 100%; }
+    @media (min-width: 768px) {
+      /* 1.5 cards visible: each card ~66.666% */
+      .custom-carousel .item { flex-basis: 66.666%; }
+    }
+    @media (min-width: 992px) {
+      /* 2 cards visible */
+      .custom-carousel .item { flex-basis: calc(50% - 0.5rem); }
+    }
+
+    /* Navigation buttons styled like screenshot */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: none;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      box-shadow: 0 10px 24px rgba(91, 17, 128, 0.35);
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      z-index: 3; /* ensure above images */
+    }
+    .nav-btn::before { content: none; display: none; }
+    .nav-btn::after { content:""; position:absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.12), transparent 26%); pointer-events:none; }
+    /* filled arrow using CSS (rectangle + triangle), centered */
+    .nav-btn .icon { position: relative; width: 24px; height: 20px; }
+    .nav-btn .icon::before { content:""; position:absolute; left: 0; top: 50%; width: 12px; height: 10px; background:#fff; transform: translateY(-50%); border-radius: 1px; }
+    .nav-btn .icon::after { content:""; position:absolute; left: 12px; top: 50%; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 12px solid #fff; transform: translateY(-50%); }
+    .nav-btn.prev .icon { transform: rotate(180deg); }
+    .nav-btn:disabled { background: #b991c8; cursor: default; }
+    .nav-btn:hover:not(:disabled) { background: var(--accent-600); transform: translateY(-50%) scale(1.03); }
+    .nav-btn.prev { left: 0.75rem; }
+    .nav-btn.next { right: 0.75rem; }
+    @media (max-width: 575.98px) {
+      .nav-btn.prev { left: 0.5rem; }
+      .nav-btn.next { right: 0.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="highlights-section">
+    <div class="container">
+      <div class="mb-3">
+        <span class="eyebrow">Program Highlights</span>
+        <h2 class="section-title">PROGRAM HIGHLIGHTS</h2>
+        <p class="section-subtitle mb-0">
+          Empowering people through hands-on solutions that last.
+        </p>
+      </div>
+
+      <div class="custom-carousel">
+        <button class="nav-btn prev" aria-label="Previous"><span class="icon"></span></button>
+        <div class="viewport">
+          <div class="track">
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="/highlights/1.jpg" alt="Community visitation program" />
+                <div class="highlight-caption">
+                  Our No one left behind Community Visitation program to an elderly widow at Ikot Ebok in Eket LGA. Visit took place as part of our sharing the spirit of Christmas in December 2025.
+                </div>
+              </article>
+            </div>
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="/highlights/2.jpg" alt="Hospital outreach" />
+                <div class="highlight-caption">
+                  Our sharing the spirit of Christmas visitation to patients at a teaching hospital in Uyo, Akwa Ibom state, Nigeria.
+                </div>
+              </article>
+            </div>
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="/highlights/3.jpg" alt="Back-to-school drive" />
+                <div class="highlight-caption">
+                  Back-to-school drive providing backpacks, books and mentorship for children in rural communities.
+                </div>
+              </article>
+            </div>
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="/highlights/4.jpg" alt="Food relief distribution" />
+                <div class="highlight-caption">
+                  Food relief distribution reaching households with staple foods and hygiene packs during the holiday season.
+                </div>
+              </article>
+            </div>
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="/highlights/5.jpg" alt="Women empowerment workshop" />
+                <div class="highlight-caption">
+                  Women empowerment workshop on financial literacy, small business skills, and peer support.
+                </div>
+              </article>
+            </div>
+            <div class="item">
+              <article class="highlight-card h-100">
+                <img src="/highlights/6.jpg" alt="Community health outreach" />
+                <div class="highlight-caption">
+                  Community health outreach offering free screenings and medications in partnership with local clinics.
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <button class="nav-btn next" aria-label="Next"><span class="icon"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div id="root"></div> -->
+  <!-- <script crossorigin="anonymous" src="//unpkg.com/same-runtime/dist/index.global.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    // Custom slider: move by one item per click; responsive widths control visible items
+    (function () {
+      const carousel = document.querySelector('.custom-carousel');
+      if (!carousel) return;
+      const viewport = carousel.querySelector('.viewport');
+      const track = carousel.querySelector('.track');
+      const prev = carousel.querySelector('.prev');
+      const next = carousel.querySelector('.next');
+      const items = Array.from(track.querySelectorAll('.item'));
+
+      let offset = 0;
+
+      function metrics() {
+        const first = items[0];
+        const itemWidth = first.getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        const step = itemWidth + gap; // move exactly one card
+        const max = Math.max(0, track.scrollWidth - viewport.clientWidth);
+        return { step, max };
+      }
+
+      function apply() {
+        const { max } = metrics();
+        offset = Math.max(0, Math.min(offset, max));
+        track.style.transform = `translateX(${-offset}px)`;
+        const disabledPrev = offset <= 0;
+        const disabledNext = offset >= max - 1;
+        prev.disabled = disabledPrev;
+        next.disabled = disabledNext;
+        prev.setAttribute('aria-disabled', String(disabledPrev));
+        next.setAttribute('aria-disabled', String(disabledNext));
+      }
+
+      prev.addEventListener('click', function () {
+        const { step } = metrics();
+        offset -= step;
+        apply();
+      });
+      next.addEventListener('click', function () {
+        const { step } = metrics();
+        offset += step;
+        apply();
+      });
+
+      window.addEventListener('resize', apply);
+      apply();
+    })();
+  </script>
+  <!-- <script type="module" src="/src/main.ts"></script> -->
+</body>
+
+</html>
