@@ -306,7 +306,7 @@ body, html {
     .highlight-card {
       border-radius: 16px;
       overflow: hidden;
-      background: #0b0213;
+      background: #4b004c;
       box-shadow: 0 8px 22px rgba(32, 9, 51, 0.16);
     }
     .highlight-card img {
@@ -316,8 +316,8 @@ body, html {
       display: block;
     }
     .highlight-caption {
-      background: var(--accent);
-      color: #fff;
+      background: #4b004c;
+      color: #ffffff;
       padding: 1rem 1.125rem;
       font-size: 0.95rem;
       line-height: 1.35;
@@ -560,7 +560,7 @@ body, html {
 
 /* TESTIMONIALS/PARTNERSHIP SECTION */
 .testimonials-partnership {
-   background-color: #f8f9fa;
+   background-color: #f6f8f9;
   padding: 100px 0 100px 0;
 }
 
