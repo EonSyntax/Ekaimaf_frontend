@@ -156,9 +156,21 @@ body, html {
 
 .navbar {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 5;
+  transition: background 0.25s ease, backdrop-filter 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease;
+}
 
+.navbar.navbar-sticky {
+  position: fixed;
+  background: linear-gradient(120deg, rgba(34, 0, 32, 0.72), rgba(101, 0, 102, 0.6));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .navbar-items {

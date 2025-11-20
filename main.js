@@ -23,6 +23,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    const navbars = document.querySelectorAll('.navbar');
+    if (navbars.length) {
+        const toggleSticky = () => {
+            const shouldStick = window.scrollY > 10;
+            navbars.forEach(nav => {
+                nav.classList.toggle('navbar-sticky', shouldStick);
+            });
+        };
+        toggleSticky();
+        window.addEventListener('scroll', toggleSticky, { passive: true });
+    }
 });
 
 function normalizePath(pathname) {
