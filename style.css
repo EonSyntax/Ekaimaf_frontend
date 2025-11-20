@@ -197,6 +197,27 @@ body, html {
   border-bottom: 2px solid #ffc107;
 }
 
+.navbar .dropdown-menu {
+  background: linear-gradient(120deg, rgba(34, 0, 32, 0.9), rgba(101, 0, 102, 0.8));
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.5rem 0;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  color: #fff;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
 .btn-warning {
     background-color: #ffc107;
     border-color: #ffc107;
@@ -231,11 +252,11 @@ body, html {
     right: 0;
     width: 50vw;
     height: 100vh;
-    background-color: #ffffff;
-    border: 2px solid #650066;
-    border-radius: 10px;
+    background: linear-gradient(170deg, rgba(34, 0, 32, 0.95), rgba(101, 0, 102, 0.85));
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px 0 0 16px;
     padding: calc(3.5rem + 1.25rem) 1.25rem 1.5rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.35);
     display: none;
     flex-direction: column;
     align-items: stretch;
@@ -243,6 +264,8 @@ body, html {
     overflow-y: auto;
     z-index: 2;
     pointer-events: none;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .navbar-collapse.show {
@@ -279,7 +302,7 @@ body, html {
   }
 
   .navbar-nav .close-nav {
-    color: #650066;
+    color: #fff;
     font-size: 1.25rem;
     padding: 0.25rem;
     text-decoration: none;
@@ -306,7 +329,7 @@ body, html {
     text-align: center;
     margin: 0;
     padding: 0.5rem 0;
-    color: #650066 !important;
+    color: #f6f6f6 !important;
     padding-right: 1rem;
     border-right: 3px solid transparent;
     padding-left: 0.5rem;
@@ -316,15 +339,18 @@ body, html {
     position: static;
     float: none;
     width: 100%;
-    margin: 0;
-    padding-left: 0.75rem;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    margin: 0.25rem 0 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: linear-gradient(120deg, rgba(34, 0, 32, 0.92), rgba(101, 0, 102, 0.8));
+    color: #fff;
+    border: 1px solid rgba(101, 0, 102, 0.35);
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
   }
 
   .navbar-nav .dropdown-menu .dropdown-item {
     padding-left: 0;
+    color: #fff;
   }
 }
 
