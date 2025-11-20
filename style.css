@@ -147,7 +147,8 @@ body, html {
 .btn-warning {
     background-color: #ffc107;
     border-color: #ffc107;
-    color: black;
+    color: #330055;
+    font-weight: 600;
 }
 
 @media (min-width: 992px) {
@@ -425,7 +426,7 @@ body, html {
 .impact-statistics {
   background-color: #EACCEB;
   padding: 100px 0 100px 0;
-  
+  position: relative;
 }
 
 .stat-card {
@@ -640,4 +641,88 @@ body, html {
     color: #6c757d;
     font-style: italic;
     padding: 10px;
+}
+
+/* IMPACT PAGE */
+.impact-page {
+  background-color: #f6f8f9;
+  margin-top: 50px;
+  padding-bottom: 3rem;
+}
+
+.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #f6f8f9;
+}
+
+.accordion-header {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #f6f8f9;
+}
+
+.accordion-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3D0066;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #f6f8f9;
+}
+
+.accordion-button:not(.collapsed) { /* box containing year*/
+  color: #3D0066;
+  background-color: #f6f8f9;
+  
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  background-color: #f6f8f9;
+}
+
+.accordion-body {
+  padding: 20px;
+  
+}
+
+.report-summary {
+  font-size: 14px;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.report-item {
+  margin: 0 20px 0 20px;
+  padding: 15px;
+  background-color: #ffffff;
+}
+.report-item h5 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #3D0066;
+}
+
+.report-item p {
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.report-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.report-images img {
+  width: 100%;
+  border-radius: 5px;
 }

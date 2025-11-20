@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     title: 'Ekaima Charitable Aid Foundation bean building a new house for a widow and her blind son.',
                     description: 'The house was completed, furnished and handed over in August 2025',
-                    images: ['/src/images/1.jpg', '/src/images/2.jpg']
+                    images: ['/assets/images/oldhouse.png', '/assets/images/newhouse.png']
                 },
                 {
                     title: 'Ekaima Charitable Aid Foundation Sharing wrappers, rice, tomatoes, cash, etc. to widows and vulnerable at Ikot Akpamba in Nsit Ubium LGA during Christmas 2024.',
                     description: '',
-                    images: ['/src/images/3.jpg', '/src/images/4.jpg']
+                    images: ['/assets/images/widow.jpg', '/assets/images/widow2.jpg']
                 }
             ]
         },
@@ -63,12 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const body = document.createElement('div');
             body.className = 'accordion-body';
-            body.innerHTML = `<p class="report-summary">${report.summary}</p>`;
+            body.innerHTML = `<h5 class="report-summary">${report.summary}</h5>`;
 
             for (const story of report.stories) {
                 const storyElement = document.createElement('div');
                 storyElement.className = 'report-item mb-4';
-                storyElement.innerHTML = `<h5>${story.title}</h5><p>${story.description}</p>`;
+                storyElement.innerHTML = `<p>${story.title}</p><p>${story.description}</p>`;
 
                 if (story.images.length > 0) {
                     const imageContainer = document.createElement('div');
