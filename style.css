@@ -941,3 +941,734 @@ body, html {
   width: 100%;
   border-radius: 5px;
 }
+
+
+
+/* ABOUT US SECTION */
+.about-us-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.about-us-header {
+  margin-bottom: 60px;
+}
+
+.about-us-title-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.orange-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-right: 15px;
+}
+
+.orange-bar {
+  width: 7px;
+  height: 45px;
+  background-color: #FF9100;
+}
+
+.about-us-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #353637;
+  margin: 0;
+}
+
+.about-us-intro {
+  padding-left: 30px;
+}
+
+.about-us-intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #353637;
+  margin-bottom: 20px;
+}
+
+.vision-mission-row {
+  margin-bottom: 40px;
+}
+
+.vision-label-box,
+.mission-label-box {
+  padding: 0;
+}
+
+/* Vision Statement row with flexbox layout */
+.vision-row-flex {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+/* Vision Statement label box - square shape */
+.vision-row-flex .vision-label-box {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 250px;
+  padding: 0;
+}
+
+/* Vision Statement text box - takes remaining space */
+.vision-row-flex .vision-statement-box {
+  flex: 1;
+  padding: 0;
+}
+
+/* Mission Statement row with flexbox layout */
+.mission-row-flex {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+/* Mission Statement label box - square shape */
+.mission-row-flex .mission-label-box {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 250px;
+  padding: 0;
+}
+
+/* Mission Statement text box - takes remaining space */
+.mission-row-flex .mission-statement-box {
+  flex: 1;
+  padding: 0;
+}
+
+.statement-label-box {
+  padding: 40px 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* Vision label box fills the square */
+.vision-row-flex .vision-label-box .statement-label-box {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Mission label box fills the square */
+.mission-row-flex .mission-label-box .statement-label-box {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Vision Statement - Darker purple for label */
+.vision-label {
+  background-color: #4C004D;
+}
+
+/* Vision Statement - Lighter purple for text */
+.vision-text {
+  background-color: #6B2B7A;
+}
+
+/* Mission Statement - Bright orange for label */
+.mission-label {
+  background-color: #FF9100;
+}
+
+/* Mission Statement - Darker orange for text */
+.mission-text {
+  background-color: #e67e00;
+}
+
+.statement-label-box h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.label-line {
+  display: block;
+  line-height: 1.2;
+}
+
+.statement-icon {
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.vision-statement-box,
+.mission-statement-box {
+  padding: 0;
+}
+
+.statement-text-box {
+  padding: 40px 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* Vision text box fills its container */
+.vision-row-flex .vision-statement-box .statement-text-box {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+}
+
+/* Mission text box fills its container */
+.mission-row-flex .mission-statement-box .statement-text-box {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+}
+
+.statement-text-box p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
+  text-align: left;
+}
+
+@media (max-width: 991.98px) {
+  .about-us-title {
+    font-size: 2.5rem;
+  }
+
+  /* Vision row flex adjustments for tablet - keep horizontal, scale down */
+  .vision-row-flex {
+    gap: 15px;
+  }
+
+  .vision-row-flex .vision-label-box {
+    width: 200px;
+    height: 200px;
+  }
+
+  .vision-row-flex .vision-label-box .statement-label-box {
+    padding: 30px 20px;
+  }
+
+  .vision-row-flex .vision-label-box .statement-label-box h3 {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .vision-row-flex .vision-label-box .statement-icon {
+    font-size: 2.5rem;
+  }
+
+  .vision-row-flex .vision-statement-box .statement-text-box {
+    min-height: 200px;
+    padding: 30px 20px;
+  }
+
+  .vision-row-flex .vision-statement-box .statement-text-box p {
+    font-size: 0.95rem;
+  }
+
+  /* Mission row flex adjustments for tablet - keep horizontal, scale down */
+  .mission-row-flex {
+    gap: 15px;
+  }
+
+  .mission-row-flex .mission-label-box {
+    width: 200px;
+    height: 200px;
+  }
+
+  .mission-row-flex .mission-label-box .statement-label-box {
+    padding: 30px 20px;
+  }
+
+  .mission-row-flex .mission-label-box .statement-label-box h3 {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .mission-row-flex .mission-label-box .statement-icon {
+    font-size: 2.5rem;
+  }
+
+  .mission-row-flex .mission-statement-box .statement-text-box {
+    min-height: 200px;
+    padding: 30px 20px;
+  }
+
+  .mission-row-flex .mission-statement-box .statement-text-box p {
+    font-size: 0.95rem;
+  }
+
+  .vision-label-box,
+  .mission-label-box,
+  .vision-statement-box,
+  .mission-statement-box {
+    margin-bottom: 20px;
+  }
+
+  .statement-label-box,
+  .statement-text-box {
+    min-height: 180px;
+    padding: 30px 20px;
+  }
+
+  .statement-label-box h3 {
+    font-size: 1rem;
+  }
+
+  .statement-icon {
+    font-size: 2.5rem;
+  }
+
+  .statement-text-box p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .about-us-section {
+    padding: 60px 0;
+  }
+
+  .about-us-title {
+    font-size: 2rem;
+  }
+
+  .orange-bar {
+    width: 5px;
+    height: 35px;
+  }
+
+  .about-us-intro {
+    padding-left: 20px;
+  }
+
+  .about-us-intro p {
+    font-size: 1rem;
+  }
+
+  /* Vision row flex adjustments for mobile - keep horizontal, scale down more */
+  .vision-row-flex {
+    gap: 12px;
+  }
+
+  .vision-row-flex .vision-label-box {
+    width: 150px;
+    height: 150px;
+  }
+
+  .vision-row-flex .vision-label-box .statement-label-box {
+    padding: 20px 15px;
+  }
+
+  .vision-row-flex .vision-label-box .statement-label-box h3 {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+
+  .vision-row-flex .vision-label-box .statement-icon {
+    font-size: 1.5rem;
+  }
+
+  .vision-row-flex .vision-statement-box .statement-text-box {
+    min-height: 150px;
+    padding: 25px 15px;
+  }
+
+  .vision-row-flex .vision-statement-box .statement-text-box p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  /* Mission row flex adjustments for mobile - keep horizontal, scale down more */
+  .mission-row-flex {
+    gap: 12px;
+  }
+
+  .mission-row-flex .mission-label-box {
+    width: 150px;
+    height: 150px;
+  }
+
+  .mission-row-flex .mission-label-box .statement-label-box {
+    padding: 20px 15px;
+  }
+
+  .mission-row-flex .mission-label-box .statement-label-box h3 {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+
+  .mission-row-flex .mission-label-box .statement-icon {
+    font-size: 1.5rem;
+  }
+
+  .mission-row-flex .mission-statement-box .statement-text-box {
+    min-height: 150px;
+    padding: 25px 15px;
+  }
+
+  .mission-row-flex .mission-statement-box .statement-text-box p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .statement-label-box,
+  .statement-text-box {
+    min-height: 160px;
+    padding: 25px 15px;
+  }
+
+  .statement-label-box h3 {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .statement-icon {
+    font-size: 2rem;
+  }
+
+  .statement-text-box p {
+    font-size: 0.95rem;
+  }
+}
+
+/* CORE VALUES SECTION */
+.core-values-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.section-title-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #4C004D;
+  margin: 0;
+}
+
+.core-value-card {
+  background-color: #f5f5f5;
+  padding: 30px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.core-value-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.core-value-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4C004D;
+  margin-bottom: 15px;
+}
+
+.core-value-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #353637;
+  margin: 0;
+}
+
+/* LEADERSHIP TEAM SECTION */
+.leadership-team-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.leadership-card {
+  text-align: center;
+}
+
+.leadership-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.leadership-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #353637;
+  margin: 0;
+}
+
+@media (max-width: 991.98px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .core-value-card {
+    padding: 25px 20px;
+  }
+
+  .core-value-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .core-value-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .core-values-section,
+  .leadership-team-section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .core-value-card {
+    padding: 20px 15px;
+  }
+
+  .core-value-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .core-value-card p {
+    font-size: 0.9rem;
+  }
+
+  .leadership-image {
+    max-width: 250px;
+  }
+
+  .leadership-name {
+    font-size: 1rem;
+  }
+}
+
+/* OUR STORY SECTION */
+.our-story-section {
+  padding: 80px 0;
+  background-color: #EACCEB;
+}
+
+.story-subtitle {
+  font-size: 1.2rem;
+  color: #353637;
+  margin-top: 15px;
+  padding-left: 30px;
+  font-weight: 500;
+}
+
+.story-content {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 30px;
+}
+
+.story-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #353637;
+  margin-bottom: 20px;
+}
+
+.story-content p strong {
+  font-weight: 700;
+  color: #4C004D;
+}
+
+.story-list {
+  list-style-type: disc;
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.story-list li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #353637;
+  margin-bottom: 10px;
+}
+
+/* CONTACT US SECTION */
+.contact-us-section {
+  padding: 80px 0;
+  background-color: #EACCEB;
+  margin-top: 0;
+}
+
+.contact-form {
+  margin-top: 30px;
+  padding: 0 30px;
+}
+
+.form-field-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.form-field-horizontal .form-label {
+  font-weight: 600;
+  color: #353637;
+  margin-bottom: 0;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.form-field-horizontal .form-control {
+  flex: 1;
+}
+
+.contact-form .form-control {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  color: #353637;
+  background-color: #ffffff;
+}
+
+.contact-form .form-control:focus {
+  border-color: #FF9100;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 145, 0, 0.1);
+}
+
+.contact-form textarea.form-control {
+  resize: vertical;
+}
+
+.submit-btn {
+  padding: 12px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.direct-email-text {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #353637;
+  text-align: center;
+}
+
+.direct-email-text a {
+  color: #4C004D;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.direct-email-text a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 991.98px) {
+  .our-story-section,
+  .contact-us-section {
+    padding: 60px 0;
+  }
+
+  .story-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .story-content p,
+  .story-list li {
+    font-size: 1rem;
+  }
+
+  .contact-form {
+    padding: 0 20px;
+  }
+
+  .form-field-horizontal .form-label {
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .our-story-section,
+  .contact-us-section {
+    padding: 50px 0;
+  }
+
+  .story-subtitle {
+    font-size: 1rem;
+    padding-left: 20px;
+  }
+
+  .story-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+  }
+
+  .story-content p,
+  .story-list li {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  .story-list {
+    padding-left: 20px;
+  }
+
+  .contact-form {
+    padding: 0 15px;
+  }
+
+  .form-field-horizontal {
+    gap: 10px;
+  }
+
+  .form-field-horizontal .form-label {
+    min-width: 60px;
+    font-size: 0.9rem;
+  }
+
+  .contact-form .form-control {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    padding: 10px 30px;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .direct-email-text {
+    font-size: 0.9rem;
+  }
+}
