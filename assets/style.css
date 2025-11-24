@@ -1799,15 +1799,15 @@ body, html {
 /* Responsive styles for outreach section */
 @media (max-width: 1199.98px) {
   .outreach {
-    margin: 3rem 3rem 8rem 3rem;
-    max-width: 100%;
+    margin: 3rem auto 8rem auto;
+    max-width: calc(100% - 6rem);
   }
 }
 
 @media (max-width: 991.98px) {
   .outreach {
-    margin: 3rem 2rem 8rem 2rem;
-    max-width: 100%;
+    margin: 3rem auto 8rem auto;
+    max-width: calc(100% - 4rem);
   }
 
   .outreach-gallery {
@@ -1817,9 +1817,8 @@ body, html {
 
 @media (max-width: 575.98px) {
   .outreach {
-    margin: 3rem 1rem 8rem 1rem;
-    max-width: 100%;
-    width: calc(100% - 2rem);
+    margin: 3rem auto 8rem auto;
+    max-width: calc(100% - 2rem);
   }
 
   .outreach-gallery {
