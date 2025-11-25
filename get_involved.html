@@ -81,7 +81,7 @@
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-warning" href="#" role="button" id="getInvolvedDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="btn btn-warning" href="./get_involved.html">
                 Get Involved
               </a>
             </li>
@@ -119,9 +119,9 @@
           <!-- VOLUNTEER CARD -->
           <div class="col-lg-4 col-md-6">
             <div class="involvement-card">
-              <div class="card-banner volunteer-banner">VOLUNTEER</div>
               <div class="card-image-wrapper">
                 <img src="./assets/images/volunteers.jpg" alt="Volunteers" class="card-image">
+                <div class="card-banner volunteer-banner">VOLUNTEER</div>
               </div>
               <div class="card-content">
                 <p class="card-text">Join a community of changemakers creating a brighter future.</p>
@@ -133,9 +133,9 @@
           <!-- PARTNER CARD -->
           <div class="col-lg-4 col-md-6">
             <div class="involvement-card">
-              <div class="card-banner partner-banner">PARTNER</div>
               <div class="card-image-wrapper">
                 <img src="./assets/images/volunteers_plan.png" alt="Partners" class="card-image">
+                <div class="card-banner partner-banner">PARTNER</div>
               </div>
               <div class="card-content">
                 <p class="card-text">Collaborate with us to scale your impact – together, we can reach more lives.</p>
@@ -147,9 +147,9 @@
           <!-- DONATE CARD -->
           <div class="col-lg-4 col-md-6">
             <div class="involvement-card">
-              <div class="card-banner donate-banner">DONATE</div>
               <div class="card-image-wrapper">
                 <img src="./assets/images/secsch.jpg" alt="Donate" class="card-image">
+                <div class="card-banner donate-banner">DONATE</div>
               </div>
               <div class="card-content">
                 <p class="card-text">Every contribution counts. Feed a family. Fund a dream. Change a story.</p>
@@ -162,6 +162,48 @@
     </section>
 
 
+  <!-- DONATION MODAL -->
+  <div id="donationModal" class="donation-modal-overlay">
+    <div class="donation-modal">
+      <button class="donation-modal-close" id="donationModalClose">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      
+      <h2 class="donation-modal-title">DONATE NOW</h2>
+      
+      <div class="donation-info-box">
+        <p class="donation-account-label">Account Name: <strong>Ekaima Foundation</strong></p>
+        
+        <div class="donation-banks">
+          <div class="bank-item">
+            <img src="./assets/images/GTBank.png" alt="GTBank" class="bank-logo">
+            <p class="bank-account">0123456789</p>
+          </div>
+          <div class="bank-item">
+            <img src="./assets/images/ProvidusBank.png" alt="ProvidusBank" class="bank-logo">
+            <p class="bank-account">0123456789</p>
+          </div>
+          <div class="bank-item">
+            <img src="./assets/images/ZenitBank.png" alt="Zenit Bank" class="bank-logo">
+            <p class="bank-account">0123456789</p>
+          </div>
+        </div>
+        
+        <div class="donation-payment-methods">
+          <img src="./assets/images/visa.png" alt="VISA" class="payment-icon">
+          <img src="./assets/images/mastercard.png" alt="Mastercard" class="payment-icon">
+          <img src="./assets/images/directdebit.png" alt="Direct Debit" class="payment-icon">
+        </div>
+        
+        <p class="donation-note">Monthly donations mean we can plan further into the future</p>
+        
+        <p class="donation-international">
+          For Donations from other countries, kindly send us an email at <br>
+          <strong>info@tradafrica.com</strong>
+        </p>
+      </div>
+    </div>
+  </div>
 
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -202,6 +244,54 @@
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
         hideNav();
+      }
+    });
+  });
+
+  // Donation Modal Handler
+  document.addEventListener('DOMContentLoaded', function () {
+    const donateButtons = document.querySelectorAll('.donation-modal-overlay');
+    const modalOverlay = document.getElementById('donationModal');
+    const modalCloseBtn = document.getElementById('donationModalClose');
+    const donateHereButtons = document.querySelectorAll('a[href="#"].card-button');
+
+    // Find the actual Donate Here button
+    const donateButton = Array.from(donateHereButtons).find(btn => {
+      const card = btn.closest('.involvement-card');
+      return card?.querySelector('.donate-banner');
+    });
+
+    if (donateButton) {
+      donateButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    // Close modal with X button
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', function () {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    }
+
+    // Close modal when clicking outside the modal box
+    if (modalOverlay) {
+      modalOverlay.addEventListener('click', function (event) {
+        if (event.target === modalOverlay) {
+          modalOverlay.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modalOverlay?.classList.contains('active')) {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
       }
     });
   });
