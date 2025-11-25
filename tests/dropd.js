@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stories: [
                 {
                     title: 'Ekaima Charitable Aid Foundation bean building a new house for a widow and her blind son.',
-                    description: 'The house was completed, furnished and handed over in August 2025',
+                    description: 'The house was completed, furnished and handed over in August 2024',
                     images: ['/assets/images/oldhouse.png', '/assets/images/newhouse.png']
                 },
                 {

@@ -90,3 +90,162 @@ h2::after {
     font-style: italic;
     padding: 10px;
 }
+
+
+
+
+/* Contact Section */
+.contact-us-section {
+    padding: 80px 0;
+    background-color: #EACCEB;
+    margin: 3rem 10rem 0 10rem;
+  }
+  
+  .contact-form {
+    margin-top: 30px;
+    padding: 0 30px;
+  }
+  
+  .form-field-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .form-field-horizontal .form-label {
+    font-weight: 600;
+    color: #353637;
+    margin-bottom: 0;
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+  
+  .form-field-horizontal .form-control {
+    flex: 1;
+  }
+  
+  .contact-form .form-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    color: #353637;
+    background-color: #ffffff;
+  }
+  
+  .contact-form .form-control:focus {
+    border-color: #FF9100;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 145, 0, 0.1);
+  }
+  
+  .contact-form textarea.form-control {
+    resize: vertical;
+  }
+  
+  .submit-btn {
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .direct-email-text {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #353637;
+    text-align: center;
+  }
+  
+  .direct-email-text a {
+    color: #4C004D;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .direct-email-text a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 991.98px) {
+    .our-story-section,
+    .contact-us-section {
+      padding: 60px 0;
+      margin: 3rem 2rem 0 2rem;
+    }
+  
+    .story-content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .story-content p,
+    .story-list li {
+      font-size: 1rem;
+    }
+  
+    .contact-form {
+      padding: 0 20px;
+    }
+  
+    .form-field-horizontal .form-label {
+      min-width: 70px;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .our-story-section,
+    .contact-us-section {
+      padding: 50px 0;
+      margin: 3rem 1rem 0 1rem;
+    }
+  
+    .story-subtitle {
+      font-size: 1rem;
+      padding-left: 20px;
+    }
+  
+    .story-content {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: 20px;
+    }
+  
+    .story-content p,
+    .story-list li {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+  
+    .story-list {
+      padding-left: 20px;
+    }
+  
+    .contact-form {
+      padding: 0 15px;
+    }
+  
+    .form-field-horizontal {
+      gap: 10px;
+    }
+  
+    .form-field-horizontal .form-label {
+      min-width: 60px;
+      font-size: 0.9rem;
+    }
+  
+    .contact-form .form-control {
+      padding: 10px 12px;
+      font-size: 0.95rem;
+    }
+  
+    .submit-btn {
+      padding: 10px 30px;
+      font-size: 1rem;
+      width: 100%;
+    }
+  
+    .direct-email-text {
+      font-size: 0.9rem;
+    }
+  }

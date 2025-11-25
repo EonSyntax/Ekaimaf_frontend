@@ -20,6 +20,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="stylesheet" href="./assets/contact.css" />
 </head>
 <body>
   <header class="hero-section">
@@ -68,7 +69,7 @@
                 Programs <i class="bi bi-chevron-down small ms-1"></i>
               </a>
               <ul class="dropdown-menu" aria-labelledby="programsDropdown">
-                <li><a class="dropdown-item" href="./first_program.html">Health & Wellness</a></li>
+                <li><a class="dropdown-item" href="./health.html">Health & Wellness</a></li>
                 <li><a class="dropdown-item" href="./empowerment.html">Empowerment</a></li>
                 <li><a class="dropdown-item" href="./Education_for_all.html">Education</a></li>
                 <li><a class="dropdown-item" href="./zero_hunger.html">Zero Hunger</a></li>
@@ -78,18 +79,12 @@
               <a class="nav-link" href="./impact.html">Impact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item">
               <a class="btn btn-warning" href="#" role="button" id="getInvolvedDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                Get Involved <i class="bi bi-chevron-down small ms-1"></i>
+                Get Involved
               </a>
-              <ul class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                
-              </ul>
             </li>
           </ul>
         </div>
@@ -292,40 +287,97 @@
             </div>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <form class="contact-form">
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <div class="form-field-horizontal">
-                  <label for="contactName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="contactName" value="Kemisola">
+      <div class="row justify-content-center contact-panel-row">
+        <div class="col-lg-5">
+          <div class="contact-info-card h-100">
+            <p class="contact-info-heading">We are always within reach</p>
+            <div class="contact-info-item">
+              <div class="icon-circle">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <div>
+                <p class="info-label">Address</p>
+                <p class="info-content">
+                  42B Unity Crescent, Lekki Phase 1, Lagos<br>
+                  15A Hanover Square, Mayfair W1S 1HS, London
+                </p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="icon-circle">
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <div>
+                <p class="info-label">Call Us</p>
+                <p class="info-content">
+                  <a href="tel:+2347030000000">+234 703 000 0000</a><br>
+                  <a href="tel:+447700900000">+44 7700 900000</a>
+                </p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="icon-circle">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <div>
+                <p class="info-label">Email Us</p>
+                <p class="info-content">
+                  <a href="mailto:hello@ekaimaf.org">hello@ekaimaf.org</a><br>
+                  <a href="mailto:support@ekaimaf.org">support@ekaimaf.org</a>
+                </p>
+              </div>
+            </div>
+            <div class="contact-info-item contact-socials">
+              <div class="icon-circle">
+                <i class="bi bi-share-fill"></i>
+              </div>
+              <div>
+                <p class="info-label">Socials</p>
+                <div class="social-links">
+                  <a href="https://x.com" target="_blank" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-field-horizontal">
-                  <label for="contactEmail" class="form-label">E-mail</label>
-                  <input type="email" class="form-control" id="contactEmail" value="abcd@xyz.com">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 mt-4 mt-lg-0">
+          <div class="contact-form-card h-100">
+            <form class="contact-form">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <div class="form-field-horizontal">
+                    <label for="contactName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="contactName" placeholder="Kemisola">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-field-horizontal">
+                    <label for="contactEmail" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="contactEmail" placeholder="abcd@xyz.com">
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="mb-3">
-              <div class="form-field-horizontal">
-                <label for="contactSubject" class="form-label">Subject</label>
-                <input type="text" class="form-control" id="contactSubject" value="Message Subject">
+              <div class="mb-3">
+                <div class="form-field-horizontal">
+                  <label for="contactSubject" class="form-label">Subject</label>
+                  <input type="text" class="form-control" id="contactSubject" placeholder="Message Subject">
+                </div>
               </div>
-            </div>
-            <div class="mb-3">
-              <div class="form-field-horizontal">
-                <label for="contactMessage" class="form-label">Message</label>
-                <textarea class="form-control" id="contactMessage" rows="10">Your Message</textarea>
+              <div class="mb-4">
+                <div class="form-field-horizontal">
+                  <label for="contactMessage" class="form-label">Message</label>
+                  <textarea class="form-control" id="contactMessage" rows="8" placeholder="Your message"></textarea>
+                </div>
               </div>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-warning submit-btn">Submit</button>
-              <p class="direct-email-text">Or send a direct email to <a href="mailto:info@ekaimafoundation.org">info@ekaimafoundation.org</a></p>
-            </div>
-          </form>
+              <div class="text-md-end text-center">
+                <button type="submit" class="btn btn-warning submit-btn">Submit</button>
+                <p class="direct-email-text mb-0">Prefer email? <a href="mailto:info@ekaimafoundation.org">info@ekaimafoundation.org</a></p>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
