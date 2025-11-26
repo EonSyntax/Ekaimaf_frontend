@@ -1156,6 +1156,71 @@ html {
   height: auto;
 }
 
+/* Partner logos infinite slider */
+.partner-slider {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0.5rem 0;
+}
+.partner-slider .partner-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  /* duplicated content will allow seamless loop using translateX(-50%) */
+  animation: partner-scroll var(--partner-duration, 18s) linear infinite;
+  will-change: transform;
+}
+.partner-slider .partner-track .partner-logo {
+  flex: 0 0 auto;
+  max-width: 160px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+}
+.partner-slider .partner-track img {
+  max-height: 70px;
+  width: auto;
+  display: block;
+}
+.partner-slider:hover .partner-track {
+  animation-play-state: paused;
+}
+
+@keyframes partner-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .partner-slider .partner-track .partner-logo {
+    max-width: 120px;
+    height: 48px;
+  }
+  .partner-slider .partner-track img {
+    max-height: 48px;
+  }
+}
+
+/* Make the Cake Box logo larger (approx x2) while keeping other logos unchanged */
+.partner-slider .partner-track .partner-logo .cakebox {
+  max-height: 62px; /* reduced slightly more */
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 575.98px) {
+  .partner-slider .partner-track .partner-logo .cakebox {
+    max-height: 48px;
+  }
+}
+
 .testimonials-partnership .logo-placeholder {
   width: 150px;
   height: 70px;
@@ -2169,7 +2234,6 @@ html {
   line-height: 1.6;
   color: #353637;
   margin-bottom: 20px;
-
 }
 
 .card-button {
@@ -2256,7 +2320,12 @@ html {
 
 /* SITE FOOTER */
 .site-footer {
-  background: radial-gradient(circle at top, rgba(255, 145, 0, 0.12), transparent 45%), #13001b;
+  background: radial-gradient(
+      circle at top,
+      rgba(255, 145, 0, 0.12),
+      transparent 45%
+    ),
+    #13001b;
   color: #f5eafc;
   padding: clamp(60px, 8vw, 100px) 0 40px;
   position: relative;
@@ -2267,7 +2336,11 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(255, 145, 0, 0.18), transparent 50%);
+  background: radial-gradient(
+    circle at 20% 20%,
+    rgba(255, 145, 0, 0.18),
+    transparent 50%
+  );
   pointer-events: none;
 }
 
@@ -2285,7 +2358,15 @@ html {
   font-weight: 700;
   color: #fff;
   font-size: 1.05rem;
-  
+}
+
+/* Remove underline from footer brand link */
+.footer-logo {
+  text-decoration: none;
+}
+.footer-logo:hover,
+.footer-logo:focus {
+  text-decoration: none;
 }
 
 .footer-copy {
@@ -2311,7 +2392,7 @@ html {
 }
 
 .footer-socials a:hover {
-  background: #FF9100;
+  background: #ff9100;
   color: #330055;
   transform: translateY(-3px);
 }
@@ -2341,12 +2422,12 @@ html {
 
 .footer-nav a::before {
   content: "•";
-  color: #FF9100;
+  color: #ff9100;
   font-size: 0.85rem;
 }
 
 .footer-nav a:hover {
-  color: #FF9100;
+  color: #ff9100;
 }
 
 .footer-gallery .gallery-viewport {
@@ -2430,7 +2511,11 @@ body.team-form-page {
 .team-form-page .navbar {
   position: static;
   width: 100%;
-  background: linear-gradient(170deg, rgba(34, 0, 32, 0.95), rgba(101, 0, 102, 0.9));
+  background: linear-gradient(
+    170deg,
+    rgba(34, 0, 32, 0.95),
+    rgba(101, 0, 102, 0.9)
+  );
   box-shadow: 0 12px 28px rgba(33, 0, 45, 0.35);
 }
 
@@ -2468,7 +2553,7 @@ body.team-form-page {
 
 .vpf-header h2 {
   font-weight: 700;
-  color: #4C004D;
+  color: #4c004d;
   margin: 0 0 0.35rem;
 }
 
@@ -2499,7 +2584,7 @@ body.team-form-page {
 
 .vpf-form .form-label {
   font-weight: 600;
-  color: #4C004D;
+  color: #4c004d;
   font-size: 0.95rem;
 }
 
@@ -2514,7 +2599,7 @@ body.team-form-page {
 
 .vpf-form .form-control:focus,
 .vpf-form .form-select:focus {
-  border-color: #FF9100;
+  border-color: #ff9100;
   box-shadow: 0 0 0 0.15rem rgba(255, 145, 0, 0.25);
 }
 
@@ -2524,7 +2609,7 @@ body.team-form-page {
 
 .vpf-radio-wrapper .radio-title {
   font-weight: 600;
-  color: #4C004D;
+  color: #4c004d;
   margin-bottom: 0.75rem;
 }
 
@@ -2544,7 +2629,8 @@ body.team-form-page {
   padding: 1rem 1.15rem;
   cursor: pointer;
   background: #fff;
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -2555,7 +2641,7 @@ body.team-form-page {
 .vpf-radio-group .label-title {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #4C004D;
+  color: #4c004d;
 }
 
 .vpf-radio-group .label-copy {
@@ -2565,7 +2651,7 @@ body.team-form-page {
 
 .vpf-radio-group input[type="radio"]:checked + label {
   border-color: transparent;
-  background: linear-gradient(135deg, #4C004D, #650066);
+  background: linear-gradient(135deg, #4c004d, #650066);
   color: #fff;
   box-shadow: 0 12px 25px rgba(76, 0, 77, 0.25);
 }
@@ -2577,8 +2663,8 @@ body.team-form-page {
 
 .vpf-submit-btn {
   margin-top: 2rem;
-  background: linear-gradient(120deg, #FF9100, #FFA94D);
-  color: #4C004D;
+  background: linear-gradient(120deg, #ff9100, #ffa94d);
+  color: #4c004d;
   font-weight: 700;
   padding: 0.95rem 2.5rem;
   border-radius: 999px;
@@ -2597,7 +2683,7 @@ body.team-form-page {
 }
 
 .vpf-highlight-card {
-  background: linear-gradient(160deg, #4C004D 0%, #220020 100%);
+  background: linear-gradient(160deg, #4c004d 0%, #220020 100%);
   color: #fff;
   border-radius: 22px;
   padding: clamp(30px, 3vw, 40px);
@@ -2975,11 +3061,9 @@ body.team-form-page {
   color: #fff;
 }
 
-
 .contact-form-card {
   border-right: 6px solid #ff9100;
 }
-
 
 .contact-form {
   margin-top: 0;

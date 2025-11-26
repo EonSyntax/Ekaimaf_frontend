@@ -61,6 +61,57 @@
   toggleSticky();
 })();
 
+// Partner logos infinite slider: duplicate track, compute duration, pause on hover/focus
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".partner-slider");
+  if (!slider) return;
+  const track = slider.querySelector(".partner-track");
+  if (!track) return;
+
+  // Duplicate content for seamless loop
+  track.innerHTML = track.innerHTML + track.innerHTML;
+
+  // Compute duration based on half track width (one set) and a pixels-per-second speed
+  function recompute() {
+    // children after duplication
+    const items = Array.from(track.children);
+    const half = Math.floor(items.length / 2);
+    if (half === 0) return;
+
+    // measure total width of first half
+    let width = 0;
+    for (let i = 0; i < half; i++) {
+      const r = items[i].getBoundingClientRect();
+      width += r.width;
+    }
+
+    // account for gap (CSS gap) between items
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    width += gap * Math.max(0, half - 1);
+
+    // speed: px per second (tune as needed)
+    const speed = 80; // px/s
+    let duration = Math.max(6, Math.round(width / speed));
+
+    // set CSS variable to control animation duration
+    slider.style.setProperty("--partner-duration", duration + "s");
+  }
+
+  // Pause on keyboard focus for accessibility
+  track.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("focus", () => {
+      track.style.animationPlayState = "paused";
+    });
+    a.addEventListener("blur", () => {
+      track.style.animationPlayState = "running";
+    });
+  });
+
+  // Ensure hover CSS already pauses; set initial values
+  recompute();
+  window.addEventListener("resize", recompute);
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const heroCarousel = document.querySelector("#heroCarousel");
   if (heroCarousel) {
