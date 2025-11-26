@@ -2071,7 +2071,7 @@ html {
 .get-involved-title {
   font-size: 3rem;
   font-weight: 700;
-  color: #353637;
+  color: #290044;
   margin-bottom: 15px;
   position: relative;
   padding-left: 30px;
@@ -2134,7 +2134,7 @@ html {
   text-align: center;
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   z-index: 10;
 }
 
@@ -2169,6 +2169,7 @@ html {
   line-height: 1.6;
   color: #353637;
   margin-bottom: 20px;
+
 }
 
 .card-button {
@@ -2250,6 +2251,411 @@ html {
   .card-button {
     padding: 10px 25px;
     font-size: 0.95rem;
+  }
+}
+
+/* SITE FOOTER */
+.site-footer {
+  background: radial-gradient(circle at top, rgba(255, 145, 0, 0.12), transparent 45%), #13001b;
+  color: #f5eafc;
+  padding: clamp(60px, 8vw, 100px) 0 40px;
+  position: relative;
+  margin-top: 60px;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 145, 0, 0.18), transparent 50%);
+  pointer-events: none;
+}
+
+.site-footer .container {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-logo img {
+  width: 58px;
+  height: auto;
+}
+
+.footer-logo span {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.05rem;
+  
+}
+
+.footer-copy {
+  max-width: 320px;
+  color: #d3c7e5;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.footer-socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+  background: #FF9100;
+  color: #330055;
+  transform: translateY(-3px);
+}
+
+.footer-section-title {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffa32b;
+  margin-bottom: 1rem;
+}
+
+.footer-nav {
+  columns: 2;
+  gap: 0.5rem;
+}
+
+.footer-nav a {
+  color: #f5eafc;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0;
+}
+
+.footer-nav a::before {
+  content: "•";
+  color: #FF9100;
+  font-size: 0.85rem;
+}
+
+.footer-nav a:hover {
+  color: #FF9100;
+}
+
+.footer-gallery .gallery-viewport {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 0.9rem;
+  overflow: hidden;
+  max-width: 360px;
+}
+
+.gallery-row {
+  display: flex;
+  gap: 0.65rem;
+  margin-bottom: 0.65rem;
+  width: max-content;
+}
+
+.gallery-row:last-child {
+  margin-bottom: 0;
+}
+
+.gallery-row img {
+  width: 78px;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex: 0 0 auto;
+  filter: saturate(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-row.slide-left {
+  animation: footerSlideLeft 18s linear infinite;
+}
+
+.gallery-row.slide-right {
+  animation: footerSlideRight 20s linear infinite;
+}
+
+@keyframes footerSlideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-35%);
+  }
+}
+
+@keyframes footerSlideRight {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  text-align: center;
+  color: #cdbfe0;
+}
+
+.footer-bottom p {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* TEAM FORM PAGE LAYOUT */
+body.team-form-page {
+  background-color: #f9f6fb;
+}
+
+.team-form-header {
+  position: relative;
+  z-index: 20;
+}
+
+.team-form-page .navbar {
+  position: static;
+  width: 100%;
+  background: linear-gradient(170deg, rgba(34, 0, 32, 0.95), rgba(101, 0, 102, 0.9));
+  box-shadow: 0 12px 28px rgba(33, 0, 45, 0.35);
+}
+
+.team-form-page .navbar .container {
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
+
+.team-form-page .navbar-items {
+  width: auto;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.team-form-page .navbar-nav {
+  width: auto;
+  justify-content: flex-end;
+  gap: 1.75rem;
+}
+
+/* VOLUNTEER & PARTNER FORM */
+.volunteer-partner-section {
+  background: linear-gradient(180deg, #fff 0%, #f5f1eb 100%);
+  padding: clamp(60px, 8vw, 110px) 0;
+}
+
+.vpf-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: clamp(28px, 3vw, 38px);
+  border: 1px solid rgba(76, 0, 77, 0.08);
+  height: 100%;
+}
+
+.vpf-header h2 {
+  font-weight: 700;
+  color: #4C004D;
+  margin: 0 0 0.35rem;
+}
+
+.vpf-header p {
+  color: #5f5267;
+  margin-bottom: 1.75rem;
+}
+
+.vpf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffa32b;
+}
+
+.vpf-eyebrow::before,
+.vpf-eyebrow::after {
+  content: "";
+  height: 2px;
+  width: 24px;
+  background: currentColor;
+  display: inline-block;
+}
+
+.vpf-form .form-label {
+  font-weight: 600;
+  color: #4C004D;
+  font-size: 0.95rem;
+}
+
+.vpf-form .form-control,
+.vpf-form .form-select {
+  border-radius: 12px;
+  border: 1px solid rgba(76, 0, 77, 0.18);
+  padding: 0.85rem 1rem;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vpf-form .form-control:focus,
+.vpf-form .form-select:focus {
+  border-color: #FF9100;
+  box-shadow: 0 0 0 0.15rem rgba(255, 145, 0, 0.25);
+}
+
+.vpf-radio-wrapper {
+  margin-top: 2rem;
+}
+
+.vpf-radio-wrapper .radio-title {
+  font-weight: 600;
+  color: #4C004D;
+  margin-bottom: 0.75rem;
+}
+
+.vpf-radio-group {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.85rem;
+}
+
+.vpf-radio-group input[type="radio"] {
+  display: none;
+}
+
+.vpf-radio-group label {
+  border: 1px solid rgba(76, 0, 77, 0.15);
+  border-radius: 16px;
+  padding: 1rem 1.15rem;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-height: 110px;
+  flex: 1 1 50%;
+}
+
+.vpf-radio-group .label-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #4C004D;
+}
+
+.vpf-radio-group .label-copy {
+  font-size: 0.9rem;
+  color: #5f5267;
+}
+
+.vpf-radio-group input[type="radio"]:checked + label {
+  border-color: transparent;
+  background: linear-gradient(135deg, #4C004D, #650066);
+  color: #fff;
+  box-shadow: 0 12px 25px rgba(76, 0, 77, 0.25);
+}
+
+.vpf-radio-group input[type="radio"]:checked + label .label-title,
+.vpf-radio-group input[type="radio"]:checked + label .label-copy {
+  color: #fff;
+}
+
+.vpf-submit-btn {
+  margin-top: 2rem;
+  background: linear-gradient(120deg, #FF9100, #FFA94D);
+  color: #4C004D;
+  font-weight: 700;
+  padding: 0.95rem 2.5rem;
+  border-radius: 999px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vpf-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(255, 145, 0, 0.3);
+}
+
+.vpf-highlight-card {
+  background: linear-gradient(160deg, #4C004D 0%, #220020 100%);
+  color: #fff;
+  border-radius: 22px;
+  padding: clamp(30px, 3vw, 40px);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.vpf-highlight-card::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+.vpf-highlight-card h3 {
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.vpf-highlight-card ul {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.vpf-highlight-card li {
+  margin-bottom: 0.45rem;
+  font-weight: 500;
+}
+
+.highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 991.98px) {
+  .vpf-card,
+  .vpf-highlight-card {
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .vpf-card {
+    padding: 24px;
+  }
+
+  .vpf-submit-btn {
+    width: auto;
+    min-width: 220px;
   }
 }
 
@@ -2361,8 +2767,8 @@ html {
 }
 
 .bank-logo {
-  width: 70px;
-  height: 70px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   background: white;
   border-radius: 8px;
@@ -2440,8 +2846,8 @@ html {
   }
 
   .bank-logo {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
   }
 
   .bank-account {
@@ -2469,7 +2875,7 @@ html {
 .contact-us-section {
   padding: 80px 0;
   background-color: #eacceb;
-  margin: 3rem 10rem 0 10rem;
+  margin: 3rem 0 5rem 0;
 }
 
 .contact-panel-row {
@@ -2568,6 +2974,12 @@ html {
   background: #ff9100;
   color: #fff;
 }
+
+
+.contact-form-card {
+  border-right: 6px solid #ff9100;
+}
+
 
 .contact-form {
   margin-top: 0;

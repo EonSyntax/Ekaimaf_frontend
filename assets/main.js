@@ -17,6 +17,10 @@
     }
   }
 
+  function isForceStickyEnabled() {
+    return document.body?.classList.contains("force-sticky-nav");
+  }
+
   function toggleSticky() {
     const scrollY =
       window.scrollY ||
@@ -24,7 +28,8 @@
       document.documentElement.scrollTop ||
       document.body.scrollTop ||
       0;
-    const shouldStick = scrollY > 0;
+    const forceSticky = isForceStickyEnabled();
+    const shouldStick = forceSticky || scrollY > 0;
 
     if (shouldStick && !nav.classList.contains("navbar-sticky")) {
       nav.classList.add("navbar-sticky");
