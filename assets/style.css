@@ -3070,6 +3070,24 @@ body.team-form-page {
   padding: 0;
 }
 
+.contact-form .social-links a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 145, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff9100;
+  font-size: 1.1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-form .social-links a:hover {
+  background: #ff9100;
+  color: #fff;
+}
+
 .form-field-horizontal {
   display: flex;
   align-items: center;
