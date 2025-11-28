@@ -1084,7 +1084,7 @@ html {
 /* TESTIMONIALS/PARTNERSHIP SECTION */
 .testimonials-partnership {
   background-color: #f6f8f9;
-  padding: 100px 0 100px 0;
+  padding: 100px 0 10px 0;
 }
 
 .testimonials-card {
@@ -1154,6 +1154,13 @@ html {
 .testimonials-partnership .partner-logo .cakebox {
   width: 50%;
   height: auto;
+}
+
+
+.partners-carousel {
+  margin: 0 100px 0 100px;
+  padding-bottom: 30px;
+  padding-top: 0;
 }
 
 /* Partner logos infinite slider */
