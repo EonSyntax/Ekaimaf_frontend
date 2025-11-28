@@ -1852,7 +1852,7 @@ html {
 .our-story-section {
   padding: 80px 0 80px 0;
   background-color: #eacceb;
-  margin: 3rem 10rem 0 10rem;
+  margin: 0 0 3rem 0;
 }
 
 .story-subtitle {
@@ -1894,153 +1894,6 @@ html {
   margin-bottom: 10px;
 }
 
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-.contact {
-  background-color: #4b004c;
-  padding: 3rem 0 3rem 0;
-  margin: 3rem 0 3rem 0;
-}
-
-.contact .section-text .fw-bold {
-  color: #ffffff;
-}
-
-.contact .h {
-  padding-bottom: 2rem;
-}
-
-.contact .info-item {
-  background-color: #ffffff;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  padding: 20px 0 35px 0;
-  border-radius: 8px;
-}
-
-.contact .info-item i {
-  font-size: 20px;
-  color: #4b004c;
-  width: 56px;
-  height: 56px;
-  font-size: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-  border-radius: 50%;
-  border: 2px dotted color-mix(in srgb, #ffa32b, transparent 40%);
-}
-
-.contact .info-item2 {
-  background-color: #ffffff;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  margin-top: 33px;
-  padding: 30px 0 30px 0;
-  border-radius: 8px;
-}
-
-.contact .info-item2 i {
-  font-size: 20px;
-  color: #4b004c;
-  width: 56px;
-  height: 56px;
-  font-size: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-  border-radius: 50%;
-  border: 2px dotted color-mix(in srgb, #ffa32b, transparent 40%);
-}
-
-.contact .info-item h3 {
-  font-size: 20px;
-  color: color-mix(in srgb, #4b004c, transparent 20%);
-  font-size: 18px;
-  font-weight: 700;
-  margin: 10px 0;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-  color: color-mix(in srgb, #4b004c, transparent 30%);
-}
-
-.contact .info-item p a {
-  padding: 0;
-  margin-bottom: 0;
-  text-decoration: none;
-  font-size: 14px;
-  color: color-mix(in srgb, #4b004c, transparent 30%);
-}
-
-.contact .social-links a {
-  text-decoration: none;
-}
-
-.contact .info-item p a:hover {
-  color: color-mix(in srgb, #ffa32b, transparent 30%);
-}
-
-.contact .php-email-form {
-  background-color: #ffffff;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  padding: 30px;
-  border-radius: 8px;
-}
-
-@media (max-width: 575px) {
-  .contact .php-email-form {
-    padding: 20px;
-    border-radius: 8px;
-  }
-}
-
-.contact .php-email-form input[type="text"],
-.contact .php-email-form input[type="email"],
-.contact .php-email-form select[type="services"],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 5px;
-  color: var(--default-color);
-  background-color: #4b004c;
-  border-color: color-mix(in srgb, #ffffff, transparent 80%);
-}
-
-.contact .php-email-form input[type="text"]:focus,
-.contact .php-email-form input[type="email"]:focus,
-.contact .php-email-form select[type="services"]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: #ffa32b;
-}
-
-.contact .php-email-form input[type="text"]::placeholder,
-.contact .php-email-form input[type="email"]::placeholder,
-.contact .php-email-form select[type="services"]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, #ffffff, transparent 70%);
-}
-
-.contact .php-email-form button[type="submit"] {
-  color: #ffffff;
-  background: #4b004c;
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type="submit"]:hover {
-  background: color-mix(in srgb, #ffa32b, transparent 20%);
-}
 
 /* HEALTH AND WELLNESS OUTREACH SECTION */
 .outreach {
@@ -2329,7 +2182,7 @@ html {
   color: #f5eafc;
   padding: clamp(60px, 8vw, 100px) 0 40px;
   position: relative;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 
 .site-footer::before {
@@ -2775,8 +2628,9 @@ body.team-form-page {
   background: linear-gradient(135deg, #e5c9f0 0%, #d9b8e8 100%);
   border-radius: 24px;
   padding: 3rem 2.5rem;
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
+  max-height: 600px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   animation: slideIn 0.3s ease;
 }
@@ -2829,6 +2683,8 @@ body.team-form-page {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .donation-account-label {
@@ -2840,9 +2696,8 @@ body.team-form-page {
 }
 
 .donation-banks {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  max-width: 50%;
+  height: auto;
 }
 
 .bank-item {
@@ -2853,8 +2708,8 @@ body.team-form-page {
 }
 
 .bank-logo {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   object-fit: contain;
   background: white;
   border-radius: 8px;
@@ -2862,24 +2717,25 @@ body.team-form-page {
 }
 
 .bank-account {
-  font-size: 0.95rem;
+  font-size: 1.95rem;
   color: #4c004d;
   font-weight: 600;
   margin: 0;
   text-align: center;
+  justify-content: center;
 }
 
-.donation-payment-methods {
+/* .donation-payment-methods {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-}
+} */
 
-.payment-icon {
+/* .payment-icon {
   height: 40px;
   object-fit: contain;
-}
+} */
 
 .donation-note {
   text-align: center;
@@ -2897,9 +2753,40 @@ body.team-form-page {
   line-height: 1.6;
 }
 
-.donation-international strong {
-  font-weight: 700;
+.donation-whatsapp {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #4c004d;
+  margin: 0;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.donation-international strong a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.donation-social-links {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 145, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff9100;
+  font-size: 1.1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.donation-social-links:hover {
+  background: #ff9100;
+  color: #fff;
+}
+
 
 @media (max-width: 600px) {
   .donation-modal {
@@ -2957,11 +2844,11 @@ body.team-form-page {
   }
 }
 
-/* CONTACT SECTION - Merged from contact.css */
+/* CONTACT SECTION */
 .contact-us-section {
   padding: 80px 0;
   background-color: #eacceb;
-  margin: 3rem 0 5rem 0;
+  margin: 0 0 0 0;
 }
 
 .contact-panel-row {
@@ -3061,6 +2948,8 @@ body.team-form-page {
   color: #fff;
 }
 
+
+
 .contact-form-card {
   border-right: 6px solid #ff9100;
 }
@@ -3150,10 +3039,15 @@ body.team-form-page {
 }
 
 @media (max-width: 991.98px) {
-  .our-story-section,
+  .our-story-section {
+    padding: 60px 0;
+    margin: 0 0 3rem 0;
+  }
+
+
   .contact-us-section {
     padding: 60px 0;
-    margin: 3rem 2rem 0 2rem;
+    margin: 0 0 0 0;
   }
 
   .contact-info-card,
@@ -3185,10 +3079,16 @@ body.team-form-page {
 }
 
 @media (max-width: 575.98px) {
-  .our-story-section,
+  .our-story-section {
+    padding: 60px 0;
+    margin: 0 0 3rem 0;
+  }
+  
+
+
   .contact-us-section {
     padding: 50px 0;
-    margin: 3rem 1rem 0 1rem;
+    margin: 0 0 0 0;
   }
 
   .contact-panel-row {

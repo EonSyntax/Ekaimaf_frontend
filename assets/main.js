@@ -61,6 +61,63 @@
   toggleSticky();
 })();
 
+// Load shared donation modal from external file
+fetch("./assets/donation-modal.html")
+  .then((response) => response.text())
+  .then((html) => {
+    const modalContainer = document.createElement("div");
+    modalContainer.innerHTML = html;
+    document.body.insertBefore(
+      modalContainer.firstElementChild,
+      document.body.lastElementChild
+    );
+
+    // Setup modal event listeners after injection
+    setupDonationModal();
+  })
+  .catch((error) => console.error("Failed to load donation modal:", error));
+
+function setupDonationModal() {
+  const modalOverlay = document.getElementById("donationModal");
+  const modalCloseBtn = document.getElementById("donationModalClose");
+  const donateButtons = document.querySelectorAll(".donate");
+
+  if (!modalOverlay) return;
+
+  // Open modal on donate button click
+  donateButtons.forEach((btn) => {
+    btn.addEventListener("click", function (event) {
+      event.preventDefault();
+      modalOverlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  // Close button click
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener("click", function () {
+      modalOverlay.classList.remove("active");
+      document.body.style.overflow = "auto";
+    });
+  }
+
+  // Click outside modal to close
+  modalOverlay.addEventListener("click", function (event) {
+    if (event.target === modalOverlay) {
+      modalOverlay.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+  });
+
+  // Escape key to close
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modalOverlay?.classList.contains("active")) {
+      modalOverlay.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+  });
+}
+
 // Partner logos infinite slider: duplicate track, compute duration, pause on hover/focus
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.querySelector(".partner-slider");
