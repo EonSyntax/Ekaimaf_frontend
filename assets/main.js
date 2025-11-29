@@ -298,15 +298,15 @@ function normalizePath(pathname) {
           description:
             "The house was completed, furnished and handed over in August 2024",
           images: [
-            "/assets/images/oldhouse.png",
-            "/assets/images/newhouse.png",
+            "./assets/images/oldhouse.png",
+            "./assets/images/newhouse.png",
           ],
         },
         {
           title:
             "Ekaima Charitable Aid Foundation Sharing wrappers, rice, tomatoes, cash, etc. to widows and vulnerable at Ikot Akpamba in Nsit Ubium LGA during Christmas 2024.",
           description: "",
-          images: ["/assets/images/widow.jpg", "/assets/images/widow2.jpg"],
+          images: ["./assets/images/widow.jpg", "/assets/images/widow2.jpg"],
         },
       ],
     },

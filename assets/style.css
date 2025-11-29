@@ -596,7 +596,67 @@ html {
   box-shadow: 0 20px 40px rgba(17, 1, 32, 0.25);
 }
 
-.collage-card::after {
+/* Event overlay/link inside collage */
+.event-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-img-wrapper {
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.event-link .event-tag {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  background: rgba(76, 0, 77, 0.95);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(12, 0, 29, 0.25);
+  z-index: 4;
+}
+
+.event-link .event-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 4;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.event-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: solid 2px #fff;
+  border-radius: 25px;
+}
+
+.collage-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-link .collage-card::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -641,7 +701,7 @@ html {
 .collage-pill {
   position: absolute;
   right: 0;
-  bottom: -20px;
+  bottom: 110px;
   background: #fff;
   border-radius: 24px;
   padding: 16px 24px;
@@ -685,11 +745,26 @@ html {
 
   .collage-card {
     border-radius: 14px;
+    min-height: 120px;
   }
 
   .collage-pill {
     position: static;
     margin-top: 1.5rem;
+  }
+
+  .event-tag {
+    left: 12px;
+    top: 12px;
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .event-cta {
+    position: static;
+    transform: none;
+    display: inline-block;
+    margin: 12px 0 0;
   }
 }
 
@@ -1155,7 +1230,6 @@ html {
   width: 50%;
   height: auto;
 }
-
 
 .partners-carousel {
   margin: 0 100px 0 100px;
@@ -1900,7 +1974,6 @@ html {
   color: #353637;
   margin-bottom: 10px;
 }
-
 
 /* HEALTH AND WELLNESS OUTREACH SECTION */
 .outreach {
@@ -2794,7 +2867,6 @@ body.team-form-page {
   color: #fff;
 }
 
-
 @media (max-width: 600px) {
   .donation-modal {
     padding: 2.5rem 1.5rem;
@@ -2955,8 +3027,6 @@ body.team-form-page {
   color: #fff;
 }
 
-
-
 .contact-form-card {
   border-right: 6px solid #ff9100;
 }
@@ -3051,7 +3121,6 @@ body.team-form-page {
     margin: 0 0 3rem 0;
   }
 
-
   .contact-us-section {
     padding: 60px 0;
     margin: 0 0 0 0;
@@ -3090,8 +3159,6 @@ body.team-form-page {
     padding: 60px 0;
     margin: 0 0 3rem 0;
   }
-  
-
 
   .contact-us-section {
     padding: 50px 0;
