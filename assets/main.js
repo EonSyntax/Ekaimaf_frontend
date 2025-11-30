@@ -1,3 +1,48 @@
+// Event image lightbox handler
+(function initEventLightbox() {
+  const lightbox = document.getElementById("eventLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const imageTrigger = document.getElementById("eventImageTrigger");
+  const closeBtn = lightbox?.querySelector(".lightbox-close");
+
+  if (!lightbox || !imageTrigger) return;
+
+  // Open lightbox
+  imageTrigger.addEventListener("click", function (e) {
+    e.preventDefault();
+    const eventImg = imageTrigger.querySelector("img");
+    if (eventImg) {
+      lightboxImage.src = eventImg.src;
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+  });
+
+  // Close lightbox
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeLightbox);
+  }
+
+  // Close on Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && lightbox?.classList.contains("active")) {
+      closeLightbox();
+    }
+  });
+
+  // Close on outside click (clicks pass through lightbox-content due to pointer-events: none)
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+})();
+
 // Sticky navbar - attach scroll listener to add/remove sticky class as user scrolls
 (function initStickyNavbar() {
   const nav = document.querySelector(".navbar");

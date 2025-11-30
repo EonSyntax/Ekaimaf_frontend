@@ -607,17 +607,18 @@ html {
 }
 
 .event-img-wrapper {
-    max-width: 500px;
-    max-height: 500px;
-    width: 100%;
-    height: auto;
-    overflow: auto;
+  max-width: 500px;
+  max-height: 500px;
+  width: 100%;
+  height: auto;
+  overflow: auto;
 }
 
 .event-link .event-tag {
   position: absolute;
-  left: 16px;
+  left: 50%;
   top: 16px;
+  transform: translateX(-50%);
   background: rgba(76, 0, 77, 0.95);
   color: #fff;
   font-weight: 700;
@@ -631,7 +632,7 @@ html {
 .event-link .event-cta {
   position: absolute;
   left: 50%;
-  bottom: 18px;
+  bottom: -4%;
   transform: translateX(-50%);
   z-index: 4;
   padding: 6px 12px;
@@ -753,19 +754,95 @@ html {
     margin-top: 1.5rem;
   }
 
-  .event-tag {
-    left: 12px;
+  .event-link .event-tag {
+    left: 50%;
     top: 12px;
+    transform: translateX(-50%);
     font-size: 0.85rem;
     padding: 6px 10px;
   }
 
-  .event-cta {
-    position: static;
-    transform: none;
+  .event-link .event-cta {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -4%;
     display: inline-block;
-    margin: 12px 0 0;
+    margin: 0;
   }
+}
+
+/* Lightbox modal for event image */
+.event-lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.event-lightbox-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.event-lightbox-modal .lightbox-content {
+  position: relative;
+  width: 90%;
+  height: 90vh;
+  max-width: 1200px;
+  animation: slideIn 0.3s ease;
+  pointer-events: none;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.event-lightbox-modal .lightbox-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.event-lightbox-modal .lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.event-lightbox-modal .lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 /* HIGHLIGHT SECTION */

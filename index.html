@@ -293,8 +293,17 @@
                 poverty, and inequality—building a future rooted in dignity,
                 opportunity, and hope.
               </p>
-              <a href="./get_involved.html" class="event-link" aria-label="Upcoming event - Get Involved">
-                <div class="event-img-wrapper">
+              <div
+                class="event-link"
+                role="button"
+                tabindex="0"
+                aria-label="Upcoming event - click to view details"
+              >
+                <div
+                  class="event-img-wrapper"
+                  id="eventImageTrigger"
+                  style="cursor: pointer"
+                >
                   <img
                     src="./assets/images/watch_out.webp"
                     alt="Upcoming ECAF event"
@@ -302,8 +311,10 @@
                   />
                 </div>
                 <span class="event-tag">UpComing Event</span>
-                <span class="event-cta btn btn-warning">Get Involved</span>
-              </a>
+                <a href="./get_involved.html" class="event-cta btn btn-warning"
+                  >Get Involved</a
+                >
+              </div>
             </div>
           </div>
           <div class="col-lg-7 col-md-12">
@@ -490,24 +501,16 @@
         </div>
 
         <div class="co">
-          <div class="row align-items-center my-4 middle-card">
-            <div class="col-md-2 icon-col">
-              <img
-                src="./assets/images/trainingicon.png"
-                style="margin-left: 100px"
-                alt="Icon"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-md-6 stat-card-wrapper">
+          <div class="row align-items-center my-4 first-card">
+            <div class="col-md-6 offset-md-2 stat-card-wrapper">
               <div class="stat-card">
                 <h3><span class="num">50+</span> TRAININGS</h3>
                 <p>women trained in vocational skills</p>
               </div>
             </div>
-            <div class="col-md-2 icon-col icon-extra">
+            <div class="col-md-2 icon-col">
               <img
-                src="./assets/images/strength.png"
+                src="./assets/images/trainingicon.png"
                 alt="Icon"
                 class="img-fluid"
               />
@@ -515,73 +518,51 @@
           </div>
         </div>
 
-        <div class="row align-items-center my-4 middle-card">
-          <div class="col-md-2 icon-col">
-            <img
-              src="./assets/images/academy.png"
-              style="margin-left: 200px"
-              alt="Icon"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-6 offset-md-1 stat-card-wrapper">
+        <div class="row align-items-center my-4 first-card">
+          <div class="col-md-6 offset-md-2 stat-card-wrapper">
             <div class="stat-card">
               <h3><span class="num">20+</span> SCHOLARSHIPS</h3>
               <p>students supported through scholarships</p>
             </div>
           </div>
-          <div class="col-md-2 icon-col icon-extra">
+          <div class="col-md-2 icon-col">
             <img
-              src="./assets/images/loveandleaf.png"
+              src="./assets/images/academy.png"
               alt="Icon"
               class="img-fluid"
             />
           </div>
         </div>
 
-        <div class="row align-items-center my-4 middle-card">
-          <div class="col-md-2 icon-col">
-            <img
-              src="./assets/images/supportlove.png"
-              style="margin-left: 300px"
-              alt="Icon"
-              class="img-fluid"
-            />
-          </div>
+        <div class="row align-items-center my-4 first-card">
           <div class="col-md-6 offset-md-2 stat-card-wrapper">
             <div class="stat-card">
               <h3><span class="num">1358+</span> HEALTHCARE</h3>
               <p>people received healthcare support</p>
             </div>
           </div>
-          <div class="col-md-2 icon-col icon-extra">
+          <div class="col-md-2 icon-col">
             <img
-              src="./assets/images/givingcare.png"
+              src="./assets/images/supportlove.png"
               alt="Icon"
               class="img-fluid"
             />
           </div>
         </div>
-        <!-- <div class="row align-items-center my-4 slogan-row">
-            <div class="col-12">
-                 <p class="slogan">Every number tells <br/> a story of hope restored.</p>
-            </div>
-        </div> -->
 
-        <div class="row align-items-center my-4 last-card">
-          <div class="col-md-2 icon-col">
-            <img
-              src="./assets/images/shovel.png"
-              style="margin-left: 350px"
-              alt="Icon"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-6 offset-md-3 stat-card-wrapper">
+        <div class="row align-items-center my-4 first-card">
+          <div class="col-md-6 offset-md-2 stat-card-wrapper">
             <div class="stat-card">
               <h3><span class="num">20+</span> SUPPORT</h3>
               <p>food with farming and other relief materal</p>
             </div>
+          </div>
+          <div class="col-md-2 icon-col">
+            <img
+              src="./assets/images/shovel.png"
+              alt="Icon"
+              class="img-fluid"
+            />
           </div>
         </div>
         <div>
@@ -662,7 +643,7 @@
 
     <section class="partners-carousel">
       <div class="container">
-      <div class="row mt-5">
+        <div class="row mt-5">
           <div class="col-12">
             <div class="partner-slider" aria-label="Partner logos carousel">
               <div class="partner-track">
@@ -808,6 +789,16 @@
         </div>
       </div>
     </footer>
+
+    <!-- Event Lightbox Modal -->
+    <div id="eventLightbox" class="event-lightbox-modal">
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Close lightbox">
+          &times;
+        </button>
+        <img id="lightboxImage" src="" alt="Upcoming event" />
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
