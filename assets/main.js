@@ -1,3 +1,103 @@
+// Testimonials Carousel - Infinite carousel with auto-play
+(function initTestimonialsCarousel() {
+  const carousel = document.querySelector(".testimonials-carousel");
+  const track = carousel?.querySelector(".testimonials-track");
+  const prevBtn = document.querySelector(".carousel-btn-prev");
+  const nextBtn = document.querySelector(".carousel-btn-next");
+  const indicators = document.querySelectorAll(".indicator");
+
+  if (!carousel || !track) return;
+
+  let currentIndex = 0;
+  const totalCards = 3; // Number of unique testimonials
+  let autoplayTimer = null;
+
+  function updateCarousel() {
+    const offset = currentIndex * 100;
+    track.style.transform = `translateX(-${offset}%)`;
+
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle("active", index === currentIndex % totalCards);
+    });
+  }
+
+  function nextSlide() {
+    currentIndex++;
+
+    // When we reach the 4th card (duplicate of 1st), reset to 1st
+    if (currentIndex >= totalCards + 1) {
+      currentIndex = 0;
+      track.style.transition = "none"; // Disable animation for reset
+      updateCarousel();
+
+      // Trigger reflow to apply transition: none
+      void track.offsetHeight;
+
+      // Re-enable animation
+      track.style.transition = "transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)";
+    } else {
+      updateCarousel();
+    }
+
+    resetAutoplay();
+  }
+
+  function prevSlide() {
+    if (currentIndex === 0) {
+      // Jump to duplicate of last card instantly
+      currentIndex = totalCards;
+      track.style.transition = "none";
+      updateCarousel();
+
+      void track.offsetHeight;
+
+      track.style.transition = "transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)";
+    }
+
+    currentIndex--;
+    updateCarousel();
+    resetAutoplay();
+  }
+
+  function autoplay() {
+    nextSlide();
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(autoplay, 5000); // Change slide every 5 seconds
+  }
+
+  function pauseAutoplay() {
+    clearInterval(autoplayTimer);
+  }
+
+  // Event listeners
+  nextBtn?.addEventListener("click", nextSlide);
+  prevBtn?.addEventListener("click", prevSlide);
+
+  // Click on indicators
+  indicators.forEach((indicator) => {
+    indicator.addEventListener("click", function () {
+      currentIndex = parseInt(this.dataset.index);
+      updateCarousel();
+      resetAutoplay();
+    });
+  });
+
+  // Pause autoplay on hover/focus
+  carousel.addEventListener("mouseenter", pauseAutoplay);
+  carousel.addEventListener("mouseleave", () => resetAutoplay());
+
+  carousel.addEventListener("focus", pauseAutoplay, true);
+  carousel.addEventListener("blur", () => resetAutoplay(), true);
+
+  // Initialize
+  updateCarousel();
+  resetAutoplay();
+})();
+
 // Event image lightbox handler
 (function initEventLightbox() {
   const lightbox = document.getElementById("eventLightbox");

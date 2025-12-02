@@ -384,8 +384,18 @@
         </div>
 
         <div class="custom-carousel">
-          <button class="highlight-btn prev" aria-label="Previous">
-            <span class="icon"></span>
+          <button
+            class="highlight-btn prev carousel-btn"
+            aria-label="Previous highlight"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
           </button>
           <div class="viewport">
             <div class="track">
@@ -465,8 +475,18 @@
               </div>
             </div>
           </div>
-          <button class="highlight-btn next" aria-label="Next">
-            <span class="icon"></span>
+          <button
+            class="highlight-btn next carousel-btn"
+            aria-label="Next highlight"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
           </button>
         </div>
       </div>
@@ -588,55 +608,141 @@
             </div>
           </div>
         </div>
-        <div class="row gy-4 mt-4 testimonials-card">
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-              <!-- <div class="gradient-layer">
-                    <img src="./assets/images/th.svg" alt="gradient">
-                    <img src="./assets/images/t.svg" alt="gradient"> 
-                  </div> -->
-              <img
-                src="./assets/images/marketgirl.jpg"
-                class="card-img-top"
-                alt="Chidinma in Nigeria"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">CHIDINMA IN NIGERIA</h5>
+
+        <!-- Infinite Carousel -->
+        <div class="testimonials-carousel-wrapper">
+          <button
+            class="carousel-btn carousel-btn-prev"
+            aria-label="Previous testimonial"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <div class="testimonials-carousel">
+            <div class="testimonials-track">
+              <!-- Original testimonials -->
+              <div class="testimonial-card">
+                <div class="testimonial-image-wrapper">
+                  <img
+                    src="./assets/images/marketgirl.jpg"
+                    alt="Chidinma in Nigeria"
+                    class="testimonial-image"
+                  />
+                  <div class="testimonial-overlay"></div>
+                </div>
+                <div class="testimonial-content">
+                  <h3 class="testimonial-name">Chidinma</h3>
+                  <p class="testimonial-location">Nigeria</p>
+                  <p class="testimonial-text">
+                    "Through ECAF's empowerment programs, I've transformed my
+                    life and community. The support I received has given me hope
+                    and purpose."
+                  </p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="testimonial-image-wrapper">
+                  <img
+                    src="./assets/images/student.webp"
+                    alt="Annana in Kenya"
+                    class="testimonial-image"
+                  />
+                  <div class="testimonial-overlay"></div>
+                </div>
+                <div class="testimonial-content">
+                  <h3 class="testimonial-name">Annana</h3>
+                  <p class="testimonial-location">Kenya</p>
+                  <p class="testimonial-text">
+                    "The scholarship I received opened doors I never thought
+                    possible. Today, I'm pursuing my dreams and giving back to
+                    my community."
+                  </p>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="testimonial-image-wrapper">
+                  <img
+                    src="./assets/images/stylist.jpg"
+                    alt="Loic in Cameroon"
+                    class="testimonial-image"
+                  />
+                  <div class="testimonial-overlay"></div>
+                </div>
+                <div class="testimonial-content">
+                  <h3 class="testimonial-name">Loic</h3>
+                  <p class="testimonial-location">Cameroon</p>
+                  <p class="testimonial-text">
+                    "ECAF's vocational training equipped me with practical
+                    skills. Now I'm not just providing for my family—I'm a
+                    mentor to others."
+                  </p>
+                </div>
+              </div>
+
+              <!-- Duplicated testimonials for infinite loop -->
+              <div class="testimonial-card">
+                <div class="testimonial-image-wrapper">
+                  <img
+                    src="./assets/images/marketgirl.jpg"
+                    alt="Chidinma in Nigeria"
+                    class="testimonial-image"
+                  />
+                  <div class="testimonial-overlay"></div>
+                </div>
+                <div class="testimonial-content">
+                  <h3 class="testimonial-name">Chidinma</h3>
+                  <p class="testimonial-location">Nigeria</p>
+                  <p class="testimonial-text">
+                    "Through ECAF's empowerment programs, I've transformed my
+                    life and community. The support I received has given me hope
+                    and purpose."
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-              <!-- <div class="gradient-layer">
-                    <img src="./assets/images/th.svg" alt="gradient">
-                    <img src="./assets/images/t.svg" alt="gradient"> 
-                  </div> -->
-              <img
-                src="./assets/images/student.webp"
-                class="card-img-top"
-                alt="Annana in Kenya"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">ANNANA IN KENYA</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-12">
-            <div class="card h-100">
-              <!-- <div class="gradient-layer">
-                    <img src="./assets/images/th.svg" alt="gradient">
-                    <img src="./assets/images/t.svg" alt="gradient"> 
-                  </div> -->
-              <img
-                src="./assets/images/stylist.jpg"
-                class="card-img-top"
-                alt="Loic in Cameroon"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">LOIC IN CAMEROON</h5>
-              </div>
-            </div>
-          </div>
+
+          <button
+            class="carousel-btn carousel-btn-next"
+            aria-label="Next testimonial"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Carousel indicators -->
+        <div class="testimonials-indicators">
+          <button
+            class="indicator active"
+            aria-label="Testimonial 1"
+            data-index="0"
+          ></button>
+          <button
+            class="indicator"
+            aria-label="Testimonial 2"
+            data-index="1"
+          ></button>
+          <button
+            class="indicator"
+            aria-label="Testimonial 3"
+            data-index="2"
+          ></button>
         </div>
       </div>
     </section>
