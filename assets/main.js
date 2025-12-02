@@ -12,6 +12,12 @@
   const totalCards = 3; // Number of unique testimonials
   let autoplayTimer = null;
 
+  // Drag / swipe state
+  let isDragging = false;
+  let startX = 0;
+  let movedX = 0;
+  let pointerId = null;
+
   function updateCarousel() {
     const offset = currentIndex * 100;
     track.style.transform = `translateX(-${offset}%)`;
@@ -25,16 +31,12 @@
   function nextSlide() {
     currentIndex++;
 
-    // When we reach the 4th card (duplicate of 1st), reset to 1st
+    // When we reach the duplicate (after the last unique card), wrap to start
     if (currentIndex >= totalCards + 1) {
       currentIndex = 0;
       track.style.transition = "none"; // Disable animation for reset
       updateCarousel();
-
-      // Trigger reflow to apply transition: none
-      void track.offsetHeight;
-
-      // Re-enable animation
+      void track.offsetHeight; // force reflow
       track.style.transition = "transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)";
     } else {
       updateCarousel();
@@ -49,9 +51,7 @@
       currentIndex = totalCards;
       track.style.transition = "none";
       updateCarousel();
-
       void track.offsetHeight;
-
       track.style.transition = "transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)";
     }
 
@@ -66,11 +66,67 @@
 
   function resetAutoplay() {
     clearInterval(autoplayTimer);
-    autoplayTimer = setInterval(autoplay, 5000); // Change slide every 5 seconds
+    autoplayTimer = setInterval(autoplay, 5000);
   }
 
   function pauseAutoplay() {
     clearInterval(autoplayTimer);
+  }
+
+  // Pointer / touch drag handlers
+  function onPointerDown(e) {
+    // Only respond to primary pointer
+    if (e.button && e.button !== 0) return;
+    isDragging = true;
+    pointerId = e.pointerId;
+    startX = e.clientX;
+    movedX = 0;
+    track.style.transition = "none";
+    pauseAutoplay();
+    try {
+      e.target.setPointerCapture?.(pointerId);
+    } catch (err) {
+      // ignore
+    }
+  }
+
+  function onPointerMove(e) {
+    if (!isDragging || e.pointerId !== pointerId) return;
+    const currentX = e.clientX;
+    movedX = currentX - startX;
+    const width =
+      carousel.clientWidth || carousel.getBoundingClientRect().width || 1;
+    const deltaPercent = (movedX / width) * 100;
+    const baseOffset = currentIndex * 100;
+    // Move track proportionally while dragging
+    track.style.transform = `translateX(-${baseOffset - deltaPercent}%)`;
+  }
+
+  function onPointerUp(e) {
+    if (!isDragging || (e.pointerId && e.pointerId !== pointerId)) return;
+    isDragging = false;
+    try {
+      e.target.releasePointerCapture?.(pointerId);
+    } catch (err) {
+      // ignore
+    }
+
+    const threshold = 50; // px required to trigger slide
+    if (Math.abs(movedX) > threshold) {
+      if (movedX < 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    } else {
+      // Not enough movement: snap back to current
+      track.style.transition = "transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)";
+      updateCarousel();
+      resetAutoplay();
+    }
+
+    pointerId = null;
+    movedX = 0;
   }
 
   // Event listeners
@@ -89,9 +145,15 @@
   // Pause autoplay on hover/focus
   carousel.addEventListener("mouseenter", pauseAutoplay);
   carousel.addEventListener("mouseleave", () => resetAutoplay());
-
   carousel.addEventListener("focus", pauseAutoplay, true);
   carousel.addEventListener("blur", () => resetAutoplay(), true);
+
+  // Pointer events for swipe/drag (works for mouse + touch)
+  carousel.addEventListener("pointerdown", onPointerDown, { passive: true });
+  document.addEventListener("pointermove", onPointerMove, { passive: true });
+  document.addEventListener("pointerup", onPointerUp);
+  document.addEventListener("pointercancel", onPointerUp);
+  carousel.addEventListener("pointerleave", onPointerUp);
 
   // Initialize
   updateCarousel();

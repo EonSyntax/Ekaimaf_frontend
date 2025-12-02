@@ -1288,6 +1288,12 @@ html {
   flex-wrap: nowrap;
 }
 
+/* Allow horizontal drag gestures while preserving vertical scroll */
+.testimonials-carousel,
+.testimonials-carousel-wrapper {
+  touch-action: pan-y;
+}
+
 .testimonials-carousel {
   flex: 1;
   overflow: hidden;
@@ -1926,7 +1932,7 @@ html {
 /* Vision Statement row with flexbox layout */
 .vision-row-flex {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: 20px;
 }
 
@@ -1947,7 +1953,7 @@ html {
 /* Mission Statement row with flexbox layout */
 .mission-row-flex {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: 20px;
 }
 
@@ -2332,6 +2338,18 @@ html {
   width: 100%;
   max-width: 300px;
   height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.leadership-image2 {
+  width: 100%;
+  max-width: 300px;
+  height: 450px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
