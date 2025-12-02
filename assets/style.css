@@ -2468,6 +2468,87 @@ html {
   margin: 3rem auto 8rem auto;
 }
 
+/* HEALTH PROJECTS CARDS */
+.health-projects-section {
+  padding: 60px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #faf7ff 100%);
+}
+.health-projects-section .section-text {
+  margin-bottom: 1.25rem;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.project-card {
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(12, 6, 30, 0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  border: 1px solid rgba(72, 0, 88, 0.04);
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(12, 6, 30, 0.12);
+}
+.project-media {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.project-year-badge {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  background: rgba(76, 0, 77, 0.92);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.project-content {
+  padding: 16px 18px;
+}
+.project-content h5 {
+  margin: 0 0 8px 0;
+  font-size: 1.05rem;
+  color: #3d0066;
+}
+.project-content p {
+  margin: 0;
+  color: #5f5267;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 991.98px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-media {
+    height: 180px;
+  }
+}
+
 .outreach-description {
   font-size: 1rem;
   line-height: 1.6;

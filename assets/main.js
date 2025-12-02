@@ -531,10 +531,16 @@ function normalizePath(pathname) {
     },
   ];
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const accordion = document.getElementById("reportsAccordion");
+  // Build reports accordion. Use an explicit builder so we run whether DOMContentLoaded
+  // has already fired or not. Wrap in try/catch to surface errors during rendering.
+  function buildReportsAccordion() {
+    try {
+      const accordion = document.getElementById("reportsAccordion");
+      if (!accordion) return;
 
-    if (accordion) {
+      // clear any existing content to avoid duplicates
+      accordion.innerHTML = "";
+
       for (const [index, report] of reports.entries()) {
         const item = document.createElement("div");
         item.className = "accordion-item";
@@ -566,18 +572,38 @@ function normalizePath(pathname) {
         body.className = "accordion-body";
         body.innerHTML = `<h5 class="report-summary">${report.summary}</h5>`;
 
-        for (const story of report.stories) {
+        // add anchor targets for direct links from program pages
+        const yearAnchor = document.createElement("div");
+        yearAnchor.id = `year-${report.year}`;
+        yearAnchor.className = "visually-hidden";
+        body.appendChild(yearAnchor);
+
+        // add a Health & Wellness subsection anchor so external links can target it
+        const healthAnchor = document.createElement("div");
+        healthAnchor.id = `year-${report.year}-health`;
+        healthAnchor.className = "program-anchor";
+        // small label so users arriving via direct link see the subsection title
+        const healthTitle = document.createElement("h4");
+        healthTitle.textContent = "Health & Wellness";
+        healthTitle.className = "mt-3 mb-2";
+        healthAnchor.appendChild(healthTitle);
+        body.appendChild(healthAnchor);
+
+        for (const story of report.stories || []) {
           const storyElement = document.createElement("div");
           storyElement.className = "report-item mb-4";
           storyElement.innerHTML = `<p>${story.title}</p><p>${story.description}</p>`;
 
-          if (story.images.length > 0) {
+          if (Array.isArray(story.images) && story.images.length > 0) {
             const imageContainer = document.createElement("div");
             imageContainer.className = "report-images";
             for (const image of story.images) {
               const img = document.createElement("img");
               img.src = image;
-              img.alt = story.title;
+              img.alt = story.title || "";
+              img.className = "img-fluid media-thumb";
+              img.dataset.mediaType = "image";
+              img.dataset.mediaSrc = image;
               imageContainer.appendChild(img);
             }
             storyElement.appendChild(imageContainer);
@@ -591,6 +617,125 @@ function normalizePath(pathname) {
         item.appendChild(collapse);
         accordion.appendChild(item);
       }
+
+      // After building accordion entries, wire up the media modal and hash navigation
+      // Setup media modal
+      const mediaModalEl = document.getElementById("mediaModal");
+      const mediaModal = mediaModalEl
+        ? new bootstrap.Modal(mediaModalEl)
+        : null;
+      const mediaContainer = document.getElementById("mediaContainer");
+
+      function openMedia(type, src, title) {
+        if (!mediaContainer) return;
+        mediaContainer.innerHTML = "";
+        if (type === "image") {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = title || "";
+          img.className = "img-fluid";
+          mediaContainer.appendChild(img);
+        } else if (type === "video") {
+          const video = document.createElement("video");
+          video.controls = true;
+          video.autoplay = true;
+          video.className = "w-100";
+          const srcEl = document.createElement("source");
+          srcEl.src = src;
+          video.appendChild(srcEl);
+          mediaContainer.appendChild(video);
+        } else if (type === "youtube") {
+          const iframe = document.createElement("iframe");
+          iframe.width = "100%";
+          iframe.height = "480";
+          iframe.src = src + "?rel=0&autoplay=1";
+          iframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          iframe.allowFullscreen = true;
+          iframe.style.border = "0";
+          mediaContainer.appendChild(iframe);
+        }
+        mediaModal?.show();
+      }
+
+      // Delegate clicks for any media-thumb inside the accordion
+      document.body.addEventListener("click", function (e) {
+        const el = e.target.closest && e.target.closest(".media-thumb");
+        if (!el) return;
+        e.preventDefault();
+        const type = el.dataset.mediaType;
+        const src = el.dataset.mediaSrc;
+        const title = el.alt || el.dataset.mediaTitle || "";
+        if (type && src) openMedia(type, src, title);
+      });
+
+      // When modal closes, clear container to stop videos
+      if (mediaModalEl) {
+        mediaModalEl.addEventListener("hidden.bs.modal", function () {
+          if (mediaContainer) mediaContainer.innerHTML = "";
+        });
+      }
+
+      // Hash navigation: open the year accordion and scroll to program anchor
+      function handleHashNavigation() {
+        const hash = (location.hash || "").replace(/^#/, "");
+        if (!hash) return;
+        // Accept year-2025 or year-2025-health
+        const parts = hash.split("-");
+        if (parts.length < 2) return;
+        const year = parts[1];
+        const collapseId = `collapse${year}`;
+        const collapseEl = document.getElementById(collapseId);
+        if (collapseEl) {
+          const bsCollapse = bootstrap.Collapse.getOrCreateInstance(
+            collapseEl,
+            { toggle: false }
+          );
+          bsCollapse.show();
+          if (parts.length > 2) {
+            const programKey = parts.slice(2).join("-");
+            const programAnchor = document.getElementById(
+              `year-${year}-${programKey}`
+            );
+            if (programAnchor)
+              setTimeout(
+                () =>
+                  programAnchor.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  }),
+                200
+              );
+          } else {
+            setTimeout(
+              () =>
+                collapseEl.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                }),
+              200
+            );
+          }
+        }
+      }
+
+      // Run on load and when hash changes
+      handleHashNavigation();
+      window.addEventListener("hashchange", handleHashNavigation);
+    } catch (err) {
+      console.error("Failed to build reports accordion:", err);
+      // leave a visible error message in the accordion so page owners see it
+      const accordion = document.getElementById("reportsAccordion");
+      if (accordion) {
+        accordion.innerHTML = `<div class="alert alert-danger">Error loading reports. Check console for details.</div>`;
+      }
     }
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", buildReportsAccordion);
+  } else {
+    // DOM already ready
+    buildReportsAccordion();
+  }
 })();

@@ -281,6 +281,23 @@
     </div>
   </footer>
 
+  <!-- Media Modal for images, local video, YouTube embeds -->
+  <div class="modal fade" id="mediaModal" tabindex="-1" aria-labelledby="mediaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="mediaModalLabel">Media</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div id="mediaContainer" class="w-100 d-flex justify-content-center align-items-center" style="min-height:320px;background:#000;">
+            <!-- injected media content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
