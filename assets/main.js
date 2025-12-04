@@ -497,23 +497,119 @@ function normalizePath(pathname) {
     {
       year: "2024",
       summary:
-        "3 Outreaches, 23 Trainings, 58 Scholarships, 237 Health care support and 18 Family Support",
-      stories: [
+        "15+ Outreaches, 50+ Trainings, 20+ Scholarships, 1358+ Healthcare support and 20+ Family Support",
+      sections: [
         {
-          title:
-            "Ekaima Charitable Aid Foundation bean building a new house for a widow and her blind son.",
-          description:
-            "The house was completed, furnished and handed over in August 2024",
-          images: [
-            "./assets/images/oldhouse.png",
-            "./assets/images/newhouse.png",
+          name: "Health & Wellness",
+          icon: "bi-heart-pulse",
+          programs: [
+            {
+              title: "Community Medical Outreach - September 2024",
+              description:
+                "Organized a comprehensive medical outreach at Ikot Akpamba providing free healthcare consultation, blood pressure checks, diabetes screening, and medication distribution to over 300 community members. Our team of healthcare professionals offered preventive care education and referred critical cases to proper medical facilities.",
+              images: [
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+              ],
+              video: "https://www.youtube.com/embed/St9pE2bv0zQ",
+              results: "300+ people screened | 45+ medications distributed",
+            },
+            {
+              title: "Mobile Health Clinic - Monthly Initiative",
+              description:
+                "Launched a series of mobile health clinics visiting 5 different communities throughout 2024. Services included maternal health consultations, child nutrition programs, disease prevention seminars, and emergency medical aid.",
+              images: ["./assets/images/supportlove.png"],
+              video: "https://www.youtube.com/embed/-58OpkGumi8?si=PM8RCw4xRBwSnGlJ",
+              results:
+                "1358+ people received care | 12+ preventive programs conducted",
+            },
           ],
         },
         {
-          title:
-            "Ekaima Charitable Aid Foundation Sharing wrappers, rice, tomatoes, cash, etc. to widows and vulnerable at Ikot Akpamba in Nsit Ubium LGA during Christmas 2024.",
-          description: "",
-          images: ["./assets/images/widow.jpg", "/assets/images/widow2.jpg"],
+          name: "Empowerment",
+          icon: "bi-briefcase",
+          programs: [
+            {
+              title: "Women's Vocational Skills Training - Ongoing",
+              description:
+                "Empowered over 50 women through intensive vocational training programs in tailoring, hairdressing, soap-making, and food processing. Participants received hands-on training, certification, and starter kits to begin their own enterprises.",
+              images: ["./assets/images/trainingicon.png"],
+              video: "https://www.youtube.com/embed/Ks-_Mh1QhMc",
+              results:
+                "50+ women trained | 35+ started small businesses | 120+ jobs created",
+            },
+            {
+              title: "Widow & Vulnerable Support Program",
+              description:
+                "Built a new house for a widow and her blind son, completed in August 2024. Also distributed wrappers, rice, tomatoes, cash, and other essential items to widows and vulnerable families at Ikot Akpamba during Christmas 2024.",
+              images: [
+                "./assets/images/oldhouse.png",
+                "./assets/images/newhouse.png",
+                "./assets/images/widow.jpg",
+                "./assets/images/widow2.jpg",
+              ],
+              video: "https://www.youtube.com/embed/e-IWRmpefzE",
+              results:
+                "18+ families supported | 1 home constructed | 250+ gift packages distributed",
+            },
+          ],
+        },
+        {
+          name: "Education",
+          icon: "bi-book",
+          programs: [
+            {
+              title: "Scholarship Program - 2024 Academic Year",
+              description:
+                "Provided educational scholarships to 20+ underprivileged students across primary, secondary, and tertiary institutions. Support covered tuition fees, learning materials, and uniforms enabling these students to continue their education without financial barriers.",
+              images: [
+                "./assets/images/student.webp",
+                "./assets/images/academy.png",
+              ],
+              video: "https://www.youtube.com/embed/xo1VjT_q7_w",
+              results:
+                "20+ students sponsored | 100% school attendance rate | 3 progressed to tertiary",
+            },
+            {
+              title: "School Feeding & Learning Materials Initiative",
+              description:
+                "Launched a comprehensive school feeding program providing nutritious meals to 200+ students daily. Alongside nutrition, distributed learning materials including books, pens, notebooks, and educational resources to enhance classroom learning.",
+              images: [
+                "./assets/images/secsch.jpg",
+                "./assets/images/feedkid.webp",
+              ],
+              video: "https://www.youtube.com/embed/9bZkp7q19f0",
+              results:
+                "200+ students fed daily | 5,000+ learning materials distributed | 35% academic improvement",
+            },
+          ],
+        },
+        {
+          name: "Zero Hunger",
+          icon: "bi-basket",
+          programs: [
+            {
+              title: "Community Feeding Outreaches - 15+ Events",
+              description:
+                "Organized 15 community feeding outreaches throughout 2024 distributing nutritious meals, grains, and protein sources to vulnerable families and elderly persons. Each outreach reached 100-150 beneficiaries with specially prepared meals and food packages.",
+              images: [
+                "./assets/images/fruitgift.png",
+                "./assets/images/community.jpg",
+              ],
+              video: "https://www.youtube.com/embed/kffacxfA7g4",
+              results:
+                "15+ outreaches | 1,800+ meals served | 500+ food packages distributed",
+            },
+            {
+              title: "Agricultural Support & Farming Relief",
+              description:
+                "Provided farming tools, seeds, and agricultural training to 20+ farming families. Support included soil analysis, modern farming techniques, storage solutions, and market linkage to improve food production and household income.",
+              images: ["./assets/images/shovel.png"],
+              video: "https://www.youtube.com/embed/nfWlot6_LSw",
+              results:
+                "20+ farming families equipped | 40% increase in yields | Sustainable food security improved",
+            },
+          ],
         },
       ],
     },
@@ -578,38 +674,125 @@ function normalizePath(pathname) {
         yearAnchor.className = "visually-hidden";
         body.appendChild(yearAnchor);
 
-        // add a Health & Wellness subsection anchor so external links can target it
-        const healthAnchor = document.createElement("div");
-        healthAnchor.id = `year-${report.year}-health`;
-        healthAnchor.className = "program-anchor";
-        // small label so users arriving via direct link see the subsection title
-        const healthTitle = document.createElement("h4");
-        healthTitle.textContent = "Health & Wellness";
-        healthTitle.className = "mt-3 mb-2";
-        healthAnchor.appendChild(healthTitle);
-        body.appendChild(healthAnchor);
+        // Handle sections (for 2024) vs stories (for other years)
+        if (Array.isArray(report.sections) && report.sections.length > 0) {
+          // New section-based layout for programs
+          for (const section of report.sections) {
+            const sectionAnchor = document.createElement("div");
+            sectionAnchor.id = `year-${report.year}-${section.name
+              .toLowerCase()
+              .replace(/\s+/g, "-")}`;
+            sectionAnchor.className = "program-section";
 
-        for (const story of report.stories || []) {
-          const storyElement = document.createElement("div");
-          storyElement.className = "report-item mb-4";
-          storyElement.innerHTML = `<p>${story.title}</p><p>${story.description}</p>`;
+            const sectionHeader = document.createElement("div");
+            sectionHeader.className = "section-header";
 
-          if (Array.isArray(story.images) && story.images.length > 0) {
-            const imageContainer = document.createElement("div");
-            imageContainer.className = "report-images";
-            for (const image of story.images) {
-              const img = document.createElement("img");
-              img.src = image;
-              img.alt = story.title || "";
-              img.className = "img-fluid media-thumb";
-              img.dataset.mediaType = "image";
-              img.dataset.mediaSrc = image;
-              imageContainer.appendChild(img);
+            const sectionTitle = document.createElement("h3");
+            sectionTitle.className = "section-title";
+            sectionTitle.innerHTML = `<i class="bi ${section.icon}"></i> ${section.name}`;
+            sectionHeader.appendChild(sectionTitle);
+            sectionAnchor.appendChild(sectionHeader);
+
+            const programsGrid = document.createElement("div");
+            programsGrid.className = "programs-grid";
+
+            for (const program of section.programs || []) {
+              const programCard = document.createElement("div");
+              programCard.className = "program-card";
+
+              const cardContent = document.createElement("div");
+              cardContent.className = "card-content";
+
+              const programTitle = document.createElement("h4");
+              programTitle.className = "program-title";
+              programTitle.textContent = program.title;
+              cardContent.appendChild(programTitle);
+
+              const description = document.createElement("p");
+              description.className = "program-description";
+              description.textContent = program.description;
+              cardContent.appendChild(description);
+
+              // Add results box if available
+              if (program.results) {
+                const resultsBox = document.createElement("div");
+                resultsBox.className = "program-results";
+                resultsBox.innerHTML = `<strong>Impact Results:</strong><br>${program.results}`;
+                cardContent.appendChild(resultsBox);
+              }
+
+              // Images gallery
+              if (Array.isArray(program.images) && program.images.length > 0) {
+                const imageGallery = document.createElement("div");
+                imageGallery.className = "image-gallery";
+
+                for (const image of program.images) {
+                  const img = document.createElement("img");
+                  img.src = image;
+                  img.alt = program.title || "";
+                  img.className = "gallery-image media-thumb";
+                  img.dataset.mediaType = "image";
+                  img.dataset.mediaSrc = image;
+                  imageGallery.appendChild(img);
+                }
+                cardContent.appendChild(imageGallery);
+              }
+
+              // Video button and container
+              if (program.video) {
+                const videoContainer = document.createElement("div");
+                videoContainer.className = "video-container";
+
+                const videoBtn = document.createElement("button");
+                videoBtn.className = "btn btn-play media-thumb";
+                videoBtn.type = "button";
+                videoBtn.dataset.mediaType = "youtube";
+                videoBtn.dataset.mediaSrc = program.video;
+                videoBtn.innerHTML = `<i class="bi bi-play-circle"></i> Watch Video`;
+                videoContainer.appendChild(videoBtn);
+                cardContent.appendChild(videoContainer);
+              }
+
+              programCard.appendChild(cardContent);
+              programsGrid.appendChild(programCard);
             }
-            storyElement.appendChild(imageContainer);
-          }
 
-          body.appendChild(storyElement);
+            sectionAnchor.appendChild(programsGrid);
+            body.appendChild(sectionAnchor);
+          }
+        } else {
+          // Legacy stories layout
+          const healthAnchor = document.createElement("div");
+          healthAnchor.id = `year-${report.year}-health`;
+          healthAnchor.className = "program-anchor";
+          const healthTitle = document.createElement("h4");
+          healthTitle.textContent = "Health & Wellness";
+          healthTitle.className = "mt-3 mb-2";
+          healthAnchor.appendChild(healthTitle);
+          body.appendChild(healthAnchor);
+
+          for (const story of report.stories || []) {
+            const storyElement = document.createElement("div");
+            storyElement.className = "report-item mb-4";
+            storyElement.innerHTML = `<p>${story.title}</p><p>${story.description}</p>`;
+
+            if (Array.isArray(story.images) && story.images.length > 0) {
+              const imageContainer = document.createElement("div");
+              imageContainer.className = "report-images";
+              for (const image of story.images) {
+                const img = document.createElement("img");
+                img.src = image;
+                img.alt = story.title || "";
+                img.className = "img-fluid media-thumb";
+                img.dataset.mediaType = "image";
+                img.dataset.mediaSrc = image;
+                imageContainer.appendChild(img);
+              }
+              storyElement.appendChild(imageContainer);
+            }
+
+            body.appendChild(storyElement);
+          }
         }
 
         collapse.appendChild(body);
@@ -629,6 +812,7 @@ function normalizePath(pathname) {
       function openMedia(type, src, title) {
         if (!mediaContainer) return;
         mediaContainer.innerHTML = "";
+        console.debug && console.debug("openMedia()", { type, src, title });
         if (type === "image") {
           const img = document.createElement("img");
           img.src = src;
@@ -645,13 +829,26 @@ function normalizePath(pathname) {
           video.appendChild(srcEl);
           mediaContainer.appendChild(video);
         } else if (type === "youtube") {
+          // Build iframe src safely (don't duplicate ? if already present)
+          const delimiter = src.includes("?") ? "&" : "?";
+          const params = "rel=0&autoplay=1";
+          const iframeSrc = src + delimiter + params;
+
           const iframe = document.createElement("iframe");
-          iframe.width = "100%";
-          iframe.height = "480";
-          iframe.src = src + "?rel=0&autoplay=1";
-          iframe.allow =
-            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-          iframe.allowFullscreen = true;
+          iframe.setAttribute("src", iframeSrc);
+          iframe.setAttribute(
+            "allow",
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay"
+          );
+          iframe.setAttribute("allowfullscreen", "");
+          iframe.setAttribute(
+            "referrerpolicy",
+            "strict-origin-when-cross-origin"
+          );
+          iframe.setAttribute("loading", "lazy");
+          // Make iframe fill the modal container
+          iframe.style.width = "100%";
+          iframe.style.height = "100%";
           iframe.style.border = "0";
           mediaContainer.appendChild(iframe);
         }
