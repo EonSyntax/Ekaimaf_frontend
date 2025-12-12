@@ -1705,8 +1705,8 @@ body {
 .partner-slider .partner-track {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  /* duplicated content will allow seamless loop using translateX(-50%) */
+  gap: 1rem; /* default gap between logos */
+  /* duplicated content will allow seamless loop; translate amount is provided via --partner-translate */
   animation: partner-scroll var(--partner-duration, 18s) linear infinite;
   will-change: transform;
 }
@@ -1717,7 +1717,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0.5rem;
+  margin: 0; /* remove extra margin; gaps are controlled by the track gap */
 }
 .partner-slider .partner-track img {
   max-height: 70px;
@@ -1733,17 +1733,54 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    /* use computed pixel translate so the animation moves exactly one set width */
+    transform: translateX(var(--partner-translate, -50%));
   }
 }
 
 @media (max-width: 575.98px) {
-  .partner-slider .partner-track .partner-logo {
-    max-width: 120px;
-    height: 48px;
+  .partner-slider .partner-track {
+    gap: 0.6rem; /* moderate gap for better spacing when logos are larger */
   }
+
+  /* Double non-cakebox logo sizes on mobile while preserving loop calculations */
+  .partner-slider .partner-track .partner-logo {
+    max-width: 136px; /* approx x2 */
+    height: 88px;
+    padding: 0 0.25rem;
+    box-sizing: border-box;
+  }
+
+  /* Make most logos larger, but keep Cake Box image at its original mobile size */
   .partner-slider .partner-track img {
-    max-height: 48px;
+    max-height: 88px;
+  }
+  .partner-slider .partner-track img.cakebox {
+    max-height: 48px; /* preserve cakebox size */
+    width: auto;
+  }
+}
+
+/* Strong mobile override to ensure visible spacing between logos
+   Some browsers/devtools renderers may collapse flex gap; add padding fallback. */
+@media (max-width: 575.98px) {
+  .partner-slider .partner-track {
+    gap: 0.6rem !important; /* ensure consistent gap */
+  }
+
+  .partner-slider .partner-track .partner-logo {
+    margin: 0 !important;
+    padding: 0 0.25rem !important; /* breathing room fallback */
+    box-sizing: border-box;
+  }
+
+  .partner-slider .partner-track img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .partner-slider .partner-track img.cakebox {
+    max-height: 48px !important;
   }
 }
 
@@ -1773,14 +1810,20 @@ body {
     padding: 0; /* remove extra vertical padding on mobile */
   }
 
+  /* Tighter spacing on small screens so more logos fit across viewport.
+     Reduce gap and max-width so 5 logos can be fully visible on narrow devices. */
   .partner-slider .partner-track {
-    gap: 1.5rem; /* slightly larger gap so logos have breathing room */
+    gap: 0.4rem; /* significantly reduced gap for mobile */
   }
 
   .partner-slider .partner-track .partner-logo {
-    max-width: 110px;
-    height: 48px;
-    margin: 0 0.35rem;
+    max-width: 68px; /* smaller logo width to allow 5 across */
+    height: 44px;
+    margin: 0 0.2rem;
+  }
+
+  .partner-slider .partner-track img {
+    max-height: 44px;
   }
 }
 

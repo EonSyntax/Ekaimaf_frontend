@@ -359,6 +359,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // set CSS variable to control animation duration
     slider.style.setProperty("--partner-duration", duration + "s");
+    // set CSS variable for translate distance (width of one set)
+    slider.style.setProperty("--partner-translate", `-${width}px`);
   }
 
   // Pause on keyboard focus for accessibility
