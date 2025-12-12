@@ -783,8 +783,9 @@ body {
   }
 
   .collage-pill {
-    position: static;
-    margin-top: 1.5rem;
+    position: relative;
+    margin-top: 3rem;
+    
   }
 
   .event-link .event-tag {
