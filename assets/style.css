@@ -785,7 +785,6 @@ body {
   .collage-pill {
     position: relative;
     margin-top: 3rem;
-    
   }
 
   .event-link .event-tag {
@@ -904,6 +903,118 @@ body {
   padding: 1rem 1.125rem;
   font-size: 0.95rem;
   line-height: 1.35;
+}
+
+/* Mini-carousel inside a highlight card */
+.mini-carousel {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: transparent; /* avoid black flash if image not yet loaded */
+}
+
+/* Fallback: ensure the renovated house is visible as a background if the img fails to render */
+.mini-carousel {
+  background-image: url("images/newhouse.png");
+  background-size: cover;
+  background-position: center center;
+}
+.mini-slides {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.mini-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 500ms ease, transform 500ms ease;
+  display: block;
+}
+.mini-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Strong visibility fallback: ensure the active mini-slide is shown even if another rule hides it */
+.mini-carousel .mini-slide {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  opacity: 0 !important;
+}
+.mini-carousel .mini-slide.active {
+  opacity: 1 !important;
+  z-index: 3 !important;
+}
+.mini-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.mini-prev {
+  left: 12px;
+}
+.mini-next {
+  right: 12px;
+}
+.mini-control:focus {
+  outline: 2px solid rgba(255, 193, 7, 0.9);
+}
+.mini-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.mini-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.mini-dot.active {
+  background: #ffc107;
+  width: 22px;
+  border-radius: 6px;
+}
+
+@media (max-width: 767.98px) {
+  .mini-carousel {
+    height: 220px;
+  }
+  .mini-control {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mini-carousel {
+    height: 180px;
+  }
 }
 
 /* Carousel controls: circular purple buttons */

@@ -378,6 +378,105 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", recompute);
 });
 
+// Mini-carousel initializer for small slideshow cards (old/new house)
+(function initMiniCarousels() {
+  function bindCarousel(carousel) {
+    const slides = Array.from(carousel.querySelectorAll(".mini-slide"));
+    const prev = carousel.querySelector(".mini-prev");
+    const next = carousel.querySelector(".mini-next");
+    const dots = Array.from(carousel.querySelectorAll(".mini-dot"));
+    const autoplay = carousel.dataset.autoplay === "true";
+    const interval = parseInt(carousel.dataset.interval, 10) || 4200;
+
+    if (slides.length <= 1) return;
+
+    let index = slides.findIndex((s) => s.classList.contains("active"));
+    if (index < 0) index = 0;
+    let timer = null;
+
+    function go(i) {
+      index = (i + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle("active", idx === index));
+      dots.forEach((d, idx) => d.classList.toggle("active", idx === index));
+    }
+
+    function nextSlide() {
+      go(index + 1);
+    }
+    function prevSlide() {
+      go(index - 1);
+    }
+
+    if (next)
+      next.addEventListener("click", () => {
+        nextSlide();
+        reset();
+      });
+    if (prev)
+      prev.addEventListener("click", () => {
+        prevSlide();
+        reset();
+      });
+    dots.forEach((d) =>
+      d.addEventListener("click", (e) => {
+        go(parseInt(d.dataset.index, 10));
+        reset();
+      })
+    );
+
+    function start() {
+      if (!autoplay) return;
+      stop();
+      timer = setInterval(nextSlide, interval);
+    }
+    function stop() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+    function reset() {
+      stop();
+      start();
+    }
+
+    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseleave", start);
+    carousel.addEventListener("focusin", stop);
+    carousel.addEventListener("focusout", start);
+
+    // Pointer swipe support
+    let isDown = false,
+      startX = 0,
+      moved = 0;
+    carousel.addEventListener("pointerdown", (e) => {
+      isDown = true;
+      startX = e.clientX;
+      carousel.setPointerCapture?.(e.pointerId);
+      stop();
+    });
+    carousel.addEventListener("pointermove", (e) => {
+      if (!isDown) return;
+      moved = e.clientX - startX;
+    });
+    carousel.addEventListener("pointerup", (e) => {
+      if (!isDown) return;
+      isDown = false;
+      carousel.releasePointerCapture?.(e.pointerId);
+      if (Math.abs(moved) > 40) {
+        if (moved < 0) nextSlide();
+        else prevSlide();
+      }
+      moved = 0;
+      reset();
+    });
+
+    start();
+  }
+
+  document.querySelectorAll(".mini-carousel").forEach(bindCarousel);
+})();
+
 document.addEventListener("DOMContentLoaded", function () {
   const heroCarousel = document.querySelector("#heroCarousel");
   if (heroCarousel) {
