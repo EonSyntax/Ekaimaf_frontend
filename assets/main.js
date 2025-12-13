@@ -386,7 +386,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const next = carousel.querySelector(".mini-next");
     const dots = Array.from(carousel.querySelectorAll(".mini-dot"));
     const autoplay = carousel.dataset.autoplay === "true";
-    const interval = parseInt(carousel.dataset.interval, 10) || 4200;
+    // Make default faster: 2400ms (user requested quicker slides)
+    const interval = parseInt(carousel.dataset.interval, 10) || 2400;
 
     if (slides.length <= 1) return;
 

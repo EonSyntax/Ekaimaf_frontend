@@ -985,6 +985,9 @@ body {
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
+  /* ensure dots sit above slides and are interactive */
+  z-index: 10;
+  pointer-events: auto;
 }
 .mini-dot {
   width: 10px;
