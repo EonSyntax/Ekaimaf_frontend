@@ -2844,6 +2844,28 @@ body {
   transform: translateY(-6px);
   box-shadow: 0 18px 40px rgba(12, 6, 30, 0.12);
 }
+
+.outreach-description{
+  max-width: 90%;
+  text-align: justify;
+}
+
+
+.read-more {
+  font-weight: 600;
+  color: #4c004d;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.read-more:hover {
+  color: #4c004d;
+  background-color: yellow;
+  border-radius: 45%;
+  padding: 3px;
+  /* margin-left: 6px; */
+}
+
 .project-media {
   position: relative;
   width: 100%;
@@ -2886,6 +2908,12 @@ body {
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .outreach-description{
+  max-width: 100%;
+  text-align: justify;
+  padding: 0 0.6rem;
+}
 }
 
 @media (max-width: 575.98px) {
@@ -4277,14 +4305,17 @@ body.team-form-page {
 /* IMAGE GALLERY STYLING */
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, calc(100% / 6)), 1fr)
+  );
   gap: 0.8rem;
   margin-bottom: 1.5rem;
 }
 
 .gallery-image {
   width: 100%;
-  height: 120px;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
   border: 2px solid rgba(166, 0, 158, 0.1);
@@ -4318,7 +4349,7 @@ body.team-form-page {
   gap: 0.6rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
+  width: fit-content;
   justify-content: center;
   text-decoration: none;
 }

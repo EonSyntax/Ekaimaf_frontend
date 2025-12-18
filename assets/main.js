@@ -592,289 +592,80 @@ function normalizePath(pathname) {
   const reports = [
     {
       year: "2025",
-      summary:
-        "15+ Outreaches, 50+ Trainings, 20+ Scholarships, 1358+ Healthcare support and 20+ Family Support",
       sections: [
         {
           name: "Health & Wellness",
           icon: "bi-heart-pulse",
           programs: [
             {
-              title: "Community Medical Outreach - September 2024",
+              title: "Free Medical & Surgical Mission - November 2025",
               description:
-                "Organized a comprehensive medical outreach at Ikot Akpamba providing free healthcare consultation, blood pressure checks, diabetes screening, and medication distribution to over 300 community members. Our team of healthcare professionals offered preventive care education and referred critical cases to proper medical facilities.",
+              "Ekaima Charitable Aid Foundation and their partners (World Surgical Foundation, Ekopimo Ibia Foundation, Cake Box, Map International, America's Medical Outreach, Ambala, Dr Ikenna & Amelia Obioma Family) organized a free comprehensive medical and surgical mission at HaadMaids Hospital Ikot Ambang Akwa Ibom Nigeria providing modern renovation to the Hospitals Environment and Medical Wards, also provided free healthcare consultation, blood pressure checks, diabetes screening, and medication distribution to over 300 community members. Our team of healthcare professionals offered preventive care education and referred critical cases to proper medical facilities.",
+              results: "300+ people treated | 60+ surgeries | 45+ medications distributed",
               images: [
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
                 "./assets/images/patientward.jpg",
                 "./assets/images/patientonbed.jpg",
               ],
               video: "https://www.youtube.com/embed/St9pE2bv0zQ",
-              results: "300+ people screened | 45+ medications distributed",
             },
-            {
-              title: "Mobile Health Clinic - Monthly Initiative",
-              description:
-                "Launched a series of mobile health clinics visiting 5 different communities throughout 2024. Services included maternal health consultations, child nutrition programs, disease prevention seminars, and emergency medical aid.",
-              images: ["./assets/images/supportlove.png"],
-              video:
-                "https://www.youtube.com/embed/-58OpkGumi8?si=PM8RCw4xRBwSnGlJ",
-              results:
-                "1358+ people received care | 12+ preventive programs conducted",
-            },
-          ],
-        },
-        {
-          name: "Empowerment",
-          icon: "bi-briefcase",
-          programs: [
-            {
-              title: "Women's Vocational Skills Training - Ongoing",
-              description:
-                "Empowered over 50 women through intensive vocational training programs in tailoring, hairdressing, soap-making, and food processing. Participants received hands-on training, certification, and starter kits to begin their own enterprises.",
-              images: ["./assets/images/trainingicon.png"],
-              video: "https://www.youtube.com/embed/Ks-_Mh1QhMc",
-              results:
-                "50+ women trained | 35+ started small businesses | 120+ jobs created",
-            },
-            {
-              title: "Widow & Vulnerable Support Program",
-              description:
-                "Built a new house for a widow and her blind son, completed in August 2024. Also distributed wrappers, rice, tomatoes, cash, and other essential items to widows and vulnerable families at Ikot Akpamba during Christmas 2024.",
-              images: [
-                "./assets/images/oldhouse.png",
-                "./assets/images/newhouse.png",
-                "./assets/images/widow.jpg",
-                "./assets/images/widow2.jpg",
-              ],
-              video: "https://www.youtube.com/embed/e-IWRmpefzE",
-              results:
-                "18+ families supported | 1 home constructed | 250+ gift packages distributed",
-            },
-          ],
-        },
-        {
-          name: "Education",
-          icon: "bi-book",
-          programs: [
-            {
-              title: "Scholarship Program - 2024 Academic Year",
-              description:
-                "Provided educational scholarships to 20+ underprivileged students across primary, secondary, and tertiary institutions. Support covered tuition fees, learning materials, and uniforms enabling these students to continue their education without financial barriers.",
-              images: [
-                "./assets/images/student.webp",
-                "./assets/images/academy.png",
-              ],
-              video: "https://www.youtube.com/embed/xo1VjT_q7_w",
-              results:
-                "20+ students sponsored | 100% school attendance rate | 3 progressed to tertiary",
-            },
-            {
-              title: "School Feeding & Learning Materials Initiative",
-              description:
-                "Launched a comprehensive school feeding program providing nutritious meals to 200+ students daily. Alongside nutrition, distributed learning materials including books, pens, notebooks, and educational resources to enhance classroom learning.",
-              images: [
-                "./assets/images/secsch.jpg",
-                "./assets/images/feedkid.webp",
-              ],
-              video: "https://www.youtube.com/embed/9bZkp7q19f0",
-              results:
-                "200+ students fed daily | 5,000+ learning materials distributed | 35% academic improvement",
-            },
-          ],
-        },
-        {
-          name: "Zero Hunger",
-          icon: "bi-basket",
-          programs: [
-            {
-              title: "Community Feeding Outreaches - 15+ Events",
-              description:
-                "Organized 15 community feeding outreaches throughout 2024 distributing nutritious meals, grains, and protein sources to vulnerable families and elderly persons. Each outreach reached 100-150 beneficiaries with specially prepared meals and food packages.",
-              images: [
-                "./assets/images/fruitgift.png",
-                "./assets/images/community.jpg",
-              ],
-              video: "https://www.youtube.com/embed/kffacxfA7g4",
-              results:
-                "15+ outreaches | 1,800+ meals served | 500+ food packages distributed",
-            },
-            {
-              title: "Agricultural Support & Farming Relief",
-              description:
-                "Provided farming tools, seeds, and agricultural training to 20+ farming families. Support included soil analysis, modern farming techniques, storage solutions, and market linkage to improve food production and household income.",
-              images: ["./assets/images/shovel.png"],
-              video: "https://www.youtube.com/embed/nfWlot6_LSw",
-              results:
-                "20+ farming families equipped | 40% increase in yields | Sustainable food security improved",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      year: "2024",
-      summary:
-        "15+ Outreaches, 50+ Trainings, 20+ Scholarships, 1358+ Healthcare support and 20+ Family Support",
-      sections: [
-        {
-          name: "Health & Wellness",
-          icon: "bi-heart-pulse",
-          programs: [
-            {
-              title: "Community Medical Outreach - September 2024",
-              description:
-                "Organized a comprehensive medical outreach at Ikot Akpamba providing free healthcare consultation, blood pressure checks, diabetes screening, and medication distribution to over 300 community members. Our team of healthcare professionals offered preventive care education and referred critical cases to proper medical facilities.",
-              images: [
-                "./assets/images/patientward.jpg",
-                "./assets/images/patientonbed.jpg",
-              ],
-              video: "https://www.youtube.com/embed/St9pE2bv0zQ",
-              results: "300+ people screened | 45+ medications distributed",
-            },
-            {
-              title: "Mobile Health Clinic - Monthly Initiative",
-              description:
-                "Launched a series of mobile health clinics visiting 5 different communities throughout 2024. Services included maternal health consultations, child nutrition programs, disease prevention seminars, and emergency medical aid.",
-              images: ["./assets/images/supportlove.png"],
-              video:
-                "https://www.youtube.com/embed/-58OpkGumi8?si=PM8RCw4xRBwSnGlJ",
-              results:
-                "1358+ people received care | 12+ preventive programs conducted",
-            },
-          ],
-        },
-        {
-          name: "Empowerment",
-          icon: "bi-briefcase",
-          programs: [
-            {
-              title: "Women's Vocational Skills Training - Ongoing",
-              description:
-                "Empowered over 50 women through intensive vocational training programs in tailoring, hairdressing, soap-making, and food processing. Participants received hands-on training, certification, and starter kits to begin their own enterprises.",
-              images: ["./assets/images/trainingicon.png"],
-              video: "https://www.youtube.com/embed/Ks-_Mh1QhMc",
-              results:
-                "50+ women trained | 35+ started small businesses | 120+ jobs created",
-            },
-            {
-              title: "Widow & Vulnerable Support Program",
-              description:
-                "Built a new house for a widow and her blind son, completed in August 2024. Also distributed wrappers, rice, tomatoes, cash, and other essential items to widows and vulnerable families at Ikot Akpamba during Christmas 2024.",
-              images: [
-                "./assets/images/oldhouse.png",
-                "./assets/images/newhouse.png",
-                "./assets/images/widow.jpg",
-                "./assets/images/widow2.jpg",
-              ],
-              video: "https://www.youtube.com/embed/e-IWRmpefzE",
-              results:
-                "18+ families supported | 1 home constructed | 250+ gift packages distributed",
-            },
-          ],
-        },
-        {
-          name: "Education",
-          icon: "bi-book",
-          programs: [
-            {
-              title: "Scholarship Program - 2024 Academic Year",
-              description:
-                "Provided educational scholarships to 20+ underprivileged students across primary, secondary, and tertiary institutions. Support covered tuition fees, learning materials, and uniforms enabling these students to continue their education without financial barriers.",
-              images: [
-                "./assets/images/student.webp",
-                "./assets/images/academy.png",
-              ],
-              video: "https://www.youtube.com/embed/xo1VjT_q7_w",
-              results:
-                "20+ students sponsored | 100% school attendance rate | 3 progressed to tertiary",
-            },
-            {
-              title: "School Feeding & Learning Materials Initiative",
-              description:
-                "Launched a comprehensive school feeding program providing nutritious meals to 200+ students daily. Alongside nutrition, distributed learning materials including books, pens, notebooks, and educational resources to enhance classroom learning.",
-              images: [
-                "./assets/images/secsch.jpg",
-                "./assets/images/feedkid.webp",
-              ],
-              video: "https://www.youtube.com/embed/9bZkp7q19f0",
-              results:
-                "200+ students fed daily | 5,000+ learning materials distributed | 35% academic improvement",
-            },
-          ],
-        },
-        {
-          name: "Zero Hunger",
-          icon: "bi-basket",
-          programs: [
-            {
-              title: "Community Feeding Outreaches - 15+ Events",
-              description:
-                "Organized 15 community feeding outreaches throughout 2024 distributing nutritious meals, grains, and protein sources to vulnerable families and elderly persons. Each outreach reached 100-150 beneficiaries with specially prepared meals and food packages.",
-              images: [
-                "./assets/images/fruitgift.png",
-                "./assets/images/community.jpg",
-              ],
-              video: "https://www.youtube.com/embed/kffacxfA7g4",
-              results:
-                "15+ outreaches | 1,800+ meals served | 500+ food packages distributed",
-            },
-            {
-              title: "Agricultural Support & Farming Relief",
-              description:
-                "Provided farming tools, seeds, and agricultural training to 20+ farming families. Support included soil analysis, modern farming techniques, storage solutions, and market linkage to improve food production and household income.",
-              images: ["./assets/images/shovel.png"],
-              video: "https://www.youtube.com/embed/nfWlot6_LSw",
-              results:
-                "20+ farming families equipped | 40% increase in yields | Sustainable food security improved",
-            },
+            
           ],
         },
       ],
     },
     {
       year: "2023",
-      summary:
-        "15+ Outreaches, 50+ Trainings, 20+ Scholarships, 1358+ Healthcare support and 20+ Family Support",
       sections: [
         {
           name: "Health & Wellness",
           icon: "bi-heart-pulse",
           programs: [
             {
-              title: "Community Medical Outreach - September 2024",
+              title: "IKOT EYO MEDICAL AND SURGICAL MISSION - 2023",
               description:
                 "Organized a comprehensive medical outreach at Ikot Akpamba providing free healthcare consultation, blood pressure checks, diabetes screening, and medication distribution to over 300 community members. Our team of healthcare professionals offered preventive care education and referred critical cases to proper medical facilities.",
               images: [
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
+                "./assets/images/patientward.jpg",
+                "./assets/images/patientonbed.jpg",
                 "./assets/images/patientward.jpg",
                 "./assets/images/patientonbed.jpg",
               ],
               video: "https://www.youtube.com/embed/St9pE2bv0zQ",
               results: "300+ people screened | 45+ medications distributed",
             },
-            {
-              title: "Mobile Health Clinic - Monthly Initiative",
-              description:
-                "Launched a series of mobile health clinics visiting 5 different communities throughout 2024. Services included maternal health consultations, child nutrition programs, disease prevention seminars, and emergency medical aid.",
-              images: ["./assets/images/supportlove.png"],
-              video:
-                "https://www.youtube.com/embed/-58OpkGumi8?si=PM8RCw4xRBwSnGlJ",
-              results:
-                "1358+ people received care | 12+ preventive programs conducted",
-            },
+            
           ],
         },
         {
           name: "Empowerment",
           icon: "bi-briefcase",
           programs: [
-            {
-              title: "Women's Vocational Skills Training - Ongoing",
-              description:
-                "Empowered over 50 women through intensive vocational training programs in tailoring, hairdressing, soap-making, and food processing. Participants received hands-on training, certification, and starter kits to begin their own enterprises.",
-              images: ["./assets/images/trainingicon.png"],
-              video: "https://www.youtube.com/embed/Ks-_Mh1QhMc",
-              results:
-                "50+ women trained | 35+ started small businesses | 120+ jobs created",
-            },
             {
               title: "Widow & Vulnerable Support Program",
               description:
@@ -895,18 +686,6 @@ function normalizePath(pathname) {
           name: "Education",
           icon: "bi-book",
           programs: [
-            {
-              title: "Scholarship Program - 2024 Academic Year",
-              description:
-                "Provided educational scholarships to 20+ underprivileged students across primary, secondary, and tertiary institutions. Support covered tuition fees, learning materials, and uniforms enabling these students to continue their education without financial barriers.",
-              images: [
-                "./assets/images/student.webp",
-                "./assets/images/academy.png",
-              ],
-              video: "https://www.youtube.com/embed/xo1VjT_q7_w",
-              results:
-                "20+ students sponsored | 100% school attendance rate | 3 progressed to tertiary",
-            },
             {
               title: "School Feeding & Learning Materials Initiative",
               description:
@@ -937,139 +716,356 @@ function normalizePath(pathname) {
               results:
                 "15+ outreaches | 1,800+ meals served | 500+ food packages distributed",
             },
-            {
-              title: "Agricultural Support & Farming Relief",
-              description:
-                "Provided farming tools, seeds, and agricultural training to 20+ farming families. Support included soil analysis, modern farming techniques, storage solutions, and market linkage to improve food production and household income.",
-              images: ["./assets/images/shovel.png"],
-              video: "https://www.youtube.com/embed/nfWlot6_LSw",
-              results:
-                "20+ farming families equipped | 40% increase in yields | Sustainable food security improved",
-            },
           ],
         },
       ],
     },
-    {
-      year: "2022",
-      summary:
-        "15+ Outreaches, 50+ Trainings, 20+ Scholarships, 1358+ Healthcare support and 20+ Family Support",
-      sections: [
-        {
-          name: "Health & Wellness",
-          icon: "bi-heart-pulse",
-          programs: [
-            {
-              title: "Community Medical Outreach - September 2024",
-              description:
-                "Organized a comprehensive medical outreach at Ikot Akpamba providing free healthcare consultation, blood pressure checks, diabetes screening, and medication distribution to over 300 community members. Our team of healthcare professionals offered preventive care education and referred critical cases to proper medical facilities.",
-              images: [
-                "./assets/images/patientward.jpg",
-                "./assets/images/patientonbed.jpg",
-              ],
-              video: "https://www.youtube.com/embed/St9pE2bv0zQ",
-              results: "300+ people screened | 45+ medications distributed",
-            },
-            {
-              title: "Mobile Health Clinic - Monthly Initiative",
-              description:
-                "Launched a series of mobile health clinics visiting 5 different communities throughout 2024. Services included maternal health consultations, child nutrition programs, disease prevention seminars, and emergency medical aid.",
-              images: ["./assets/images/supportlove.png"],
-              video:
-                "https://www.youtube.com/embed/-58OpkGumi8?si=PM8RCw4xRBwSnGlJ",
-              results:
-                "1358+ people received care | 12+ preventive programs conducted",
-            },
-          ],
-        },
-        {
-          name: "Empowerment",
-          icon: "bi-briefcase",
-          programs: [
-            {
-              title: "Women's Vocational Skills Training - Ongoing",
-              description:
-                "Empowered over 50 women through intensive vocational training programs in tailoring, hairdressing, soap-making, and food processing. Participants received hands-on training, certification, and starter kits to begin their own enterprises.",
-              images: ["./assets/images/trainingicon.png"],
-              video: "https://www.youtube.com/embed/Ks-_Mh1QhMc",
-              results:
-                "50+ women trained | 35+ started small businesses | 120+ jobs created",
-            },
-            {
-              title: "Widow & Vulnerable Support Program",
-              description:
-                "Built a new house for a widow and her blind son, completed in August 2024. Also distributed wrappers, rice, tomatoes, cash, and other essential items to widows and vulnerable families at Ikot Akpamba during Christmas 2024.",
-              images: [
-                "./assets/images/oldhouse.png",
-                "./assets/images/newhouse.png",
-                "./assets/images/widow.jpg",
-                "./assets/images/widow2.jpg",
-              ],
-              video: "https://www.youtube.com/embed/e-IWRmpefzE",
-              results:
-                "18+ families supported | 1 home constructed | 250+ gift packages distributed",
-            },
-          ],
-        },
-        {
-          name: "Education",
-          icon: "bi-book",
-          programs: [
-            {
-              title: "Scholarship Program - 2024 Academic Year",
-              description:
-                "Provided educational scholarships to 20+ underprivileged students across primary, secondary, and tertiary institutions. Support covered tuition fees, learning materials, and uniforms enabling these students to continue their education without financial barriers.",
-              images: [
-                "./assets/images/student.webp",
-                "./assets/images/academy.png",
-              ],
-              video: "https://www.youtube.com/embed/xo1VjT_q7_w",
-              results:
-                "20+ students sponsored | 100% school attendance rate | 3 progressed to tertiary",
-            },
-            {
-              title: "School Feeding & Learning Materials Initiative",
-              description:
-                "Launched a comprehensive school feeding program providing nutritious meals to 200+ students daily. Alongside nutrition, distributed learning materials including books, pens, notebooks, and educational resources to enhance classroom learning.",
-              images: [
-                "./assets/images/secsch.jpg",
-                "./assets/images/feedkid.webp",
-              ],
-              video: "https://www.youtube.com/embed/9bZkp7q19f0",
-              results:
-                "200+ students fed daily | 5,000+ learning materials distributed | 35% academic improvement",
-            },
-          ],
-        },
-        {
-          name: "Zero Hunger",
-          icon: "bi-basket",
-          programs: [
-            {
-              title: "Community Feeding Outreaches - 15+ Events",
-              description:
-                "Organized 15 community feeding outreaches throughout 2024 distributing nutritious meals, grains, and protein sources to vulnerable families and elderly persons. Each outreach reached 100-150 beneficiaries with specially prepared meals and food packages.",
-              images: [
-                "./assets/images/fruitgift.png",
-                "./assets/images/community.jpg",
-              ],
-              video: "https://www.youtube.com/embed/kffacxfA7g4",
-              results:
-                "15+ outreaches | 1,800+ meals served | 500+ food packages distributed",
-            },
-            {
-              title: "Agricultural Support & Farming Relief",
-              description:
-                "Provided farming tools, seeds, and agricultural training to 20+ farming families. Support included soil analysis, modern farming techniques, storage solutions, and market linkage to improve food production and household income.",
-              images: ["./assets/images/shovel.png"],
-              video: "https://www.youtube.com/embed/nfWlot6_LSw",
-              results:
-                "20+ farming families equipped | 40% increase in yields | Sustainable food security improved",
-            },
-          ],
-        },
-      ],
-    },
+
+
+
+
+    // {
+    //   year: "2024",
+    //   summary:
+    //     "15+ Outreaches, 50+ Trainings, 20+ Scholarships, 1358+ Healthcare support and 20+ Family Support",
+    //   sections: [
+    //     {
+    //       name: "Health & Wellness",
+    //       icon: "bi-heart-pulse",
+    //       // programs: [
+    //       //   {
+    //       //     title: "Community Medical Outreach - September 2024",
+    //       //     description:
+    //       //       "Organized a comprehensive medical outreach at Ikot Akpamba providing free healthcare consultation, blood pressure checks, diabetes screening, and medication distribution to over 300 community members. Our team of healthcare professionals offered preventive care education and referred critical cases to proper medical facilities.",
+    //       //     images: [
+    //       //       "./assets/images/patientward.jpg",
+    //       //       "./assets/images/patientonbed.jpg",
+    //       //     ],
+    //       //     video: "https://www.youtube.com/embed/St9pE2bv0zQ",
+    //       //     results: "300+ people screened | 45+ medications distributed",
+    //       //   },
+    //       //   {
+    //       //     title: "Mobile Health Clinic - Monthly Initiative",
+    //       //     description:
+    //       //       "Launched a series of mobile health clinics visiting 5 different communities throughout 2024. Services included maternal health consultations, child nutrition programs, disease prevention seminars, and emergency medical aid.",
+    //       //     images: ["./assets/images/supportlove.png"],
+    //       //     video:
+    //       //       "https://www.youtube.com/embed/-58OpkGumi8?si=PM8RCw4xRBwSnGlJ",
+    //       //     results:
+    //       //       "1358+ people received care | 12+ preventive programs conducted",
+    //       //   },
+    //       // ],
+    //     },
+    //     {
+    //       name: "Empowerment",
+    //       icon: "bi-briefcase",
+    //       // programs: [
+    //       //   {
+    //       //     title: "Women's Vocational Skills Training - Ongoing",
+    //       //     description:
+    //       //       "Empowered over 50 women through intensive vocational training programs in tailoring, hairdressing, soap-making, and food processing. Participants received hands-on training, certification, and starter kits to begin their own enterprises.",
+    //       //     images: ["./assets/images/trainingicon.png"],
+    //       //     video: "https://www.youtube.com/embed/Ks-_Mh1QhMc",
+    //       //     results:
+    //       //       "50+ women trained | 35+ started small businesses | 120+ jobs created",
+    //       //   },
+    //       //   {
+    //       //     title: "Widow & Vulnerable Support Program",
+    //       //     description:
+    //       //       "Built a new house for a widow and her blind son, completed in August 2024. Also distributed wrappers, rice, tomatoes, cash, and other essential items to widows and vulnerable families at Ikot Akpamba during Christmas 2024.",
+    //       //     images: [
+    //       //       "./assets/images/oldhouse.png",
+    //       //       "./assets/images/newhouse.png",
+    //       //       "./assets/images/widow.jpg",
+    //       //       "./assets/images/widow2.jpg",
+    //       //     ],
+    //       //     video: "https://www.youtube.com/embed/e-IWRmpefzE",
+    //       //     results:
+    //       //       "18+ families supported | 1 home constructed | 250+ gift packages distributed",
+    //       //   },
+    //       // ],
+    //     },
+    //     {
+    //       name: "Education",
+    //       icon: "bi-book",
+    //       // programs: [
+    //       //   {
+    //       //     title: "Scholarship Program - 2024 Academic Year",
+    //       //     description:
+    //       //       "Provided educational scholarships to 20+ underprivileged students across primary, secondary, and tertiary institutions. Support covered tuition fees, learning materials, and uniforms enabling these students to continue their education without financial barriers.",
+    //       //     images: [
+    //       //       "./assets/images/student.webp",
+    //       //       "./assets/images/academy.png",
+    //       //     ],
+    //       //     video: "https://www.youtube.com/embed/xo1VjT_q7_w",
+    //       //     results:
+    //       //       "20+ students sponsored | 100% school attendance rate | 3 progressed to tertiary",
+    //       //   },
+    //       //   {
+    //       //     title: "School Feeding & Learning Materials Initiative",
+    //       //     description:
+    //       //       "Launched a comprehensive school feeding program providing nutritious meals to 200+ students daily. Alongside nutrition, distributed learning materials including books, pens, notebooks, and educational resources to enhance classroom learning.",
+    //       //     images: [
+    //       //       "./assets/images/secsch.jpg",
+    //       //       "./assets/images/feedkid.webp",
+    //       //     ],
+    //       //     video: "https://www.youtube.com/embed/9bZkp7q19f0",
+    //       //     results:
+    //       //       "200+ students fed daily | 5,000+ learning materials distributed | 35% academic improvement",
+    //       //   },
+    //       // ],
+    //     },
+    //     {
+    //       name: "Zero Hunger",
+    //       icon: "bi-basket",
+    //       // programs: [
+    //       //   {
+    //       //     title: "Community Feeding Outreaches - 15+ Events",
+    //       //     description:
+    //       //       "Organized 15 community feeding outreaches throughout 2024 distributing nutritious meals, grains, and protein sources to vulnerable families and elderly persons. Each outreach reached 100-150 beneficiaries with specially prepared meals and food packages.",
+    //       //     images: [
+    //       //       "./assets/images/fruitgift.png",
+    //       //       "./assets/images/community.jpg",
+    //       //     ],
+    //       //     video: "https://www.youtube.com/embed/kffacxfA7g4",
+    //       //     results:
+    //       //       "15+ outreaches | 1,800+ meals served | 500+ food packages distributed",
+    //       //   },
+    //       //   {
+    //       //     title: "Agricultural Support & Farming Relief",
+    //       //     description:
+    //       //       "Provided farming tools, seeds, and agricultural training to 20+ farming families. Support included soil analysis, modern farming techniques, storage solutions, and market linkage to improve food production and household income.",
+    //       //     images: ["./assets/images/shovel.png"],
+    //       //     video: "https://www.youtube.com/embed/nfWlot6_LSw",
+    //       //     results:
+    //       //       "20+ farming families equipped | 40% increase in yields | Sustainable food security improved",
+    //       //   },
+    //       // ],
+    //     },
+    //   ],
+    // },
+
+
+    // {
+    //   year: "2023",
+    //   summary:
+    //     "15+ Outreaches, 50+ Trainings, 20+ Scholarships, 1358+ Healthcare support and 20+ Family Support",
+    //   sections: [
+    //     {
+    //       name: "Health & Wellness",
+    //       icon: "bi-heart-pulse",
+    //       programs: [
+    //         {
+    //           title: "Community Medical Outreach - September 2023",
+    //           description:
+    //             "Organized a comprehensive medical outreach at Ikot Akpamba providing free healthcare consultation, blood pressure checks, diabetes screening, and medication distribution to over 300 community members. Our team of healthcare professionals offered preventive care education and referred critical cases to proper medical facilities.",
+    //           images: [
+    //             "./assets/images/patientward.jpg",
+    //             "./assets/images/patientonbed.jpg",
+    //           ],
+    //           video: "https://www.youtube.com/embed/St9pE2bv0zQ",
+    //           results: "300+ people screened | 45+ medications distributed",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       name: "Empowerment",
+    //       icon: "bi-briefcase",
+    //       programs: [
+    //         {
+    //           title: "Women's Vocational Skills Training - Ongoing",
+    //           description:
+    //             "Empowered over 50 women through intensive vocational training programs in tailoring, hairdressing, soap-making, and food processing. Participants received hands-on training, certification, and starter kits to begin their own enterprises.",
+    //           images: ["./assets/images/trainingicon.png"],
+    //           video: "https://www.youtube.com/embed/Ks-_Mh1QhMc",
+    //           results:
+    //             "50+ women trained | 35+ started small businesses | 120+ jobs created",
+    //         },
+    //         {
+    //           title: "Widow & Vulnerable Support Program",
+    //           description:
+    //             "Built a new house for a widow and her blind son, completed in August 2024. Also distributed wrappers, rice, tomatoes, cash, and other essential items to widows and vulnerable families at Ikot Akpamba during Christmas 2024.",
+    //           images: [
+    //             "./assets/images/oldhouse.png",
+    //             "./assets/images/newhouse.png",
+    //             "./assets/images/widow.jpg",
+    //             "./assets/images/widow2.jpg",
+    //           ],
+    //           video: "https://www.youtube.com/embed/e-IWRmpefzE",
+    //           results:
+    //             "18+ families supported | 1 home constructed | 250+ gift packages distributed",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       name: "Education",
+    //       icon: "bi-book",
+    //       programs: [
+    //         {
+    //           title: "School Feeding & Learning Materials Initiative",
+    //           description:
+    //             "Launched a comprehensive school feeding program providing nutritious meals to 200+ students daily. Alongside nutrition, distributed learning materials including books, pens, notebooks, and educational resources to enhance classroom learning.",
+    //           images: [
+    //             "./assets/images/secsch.jpg",
+    //             "./assets/images/feedkid.webp",
+    //           ],
+    //           video: "https://www.youtube.com/embed/9bZkp7q19f0",
+    //           results:
+    //             "200+ students fed daily | 5,000+ learning materials distributed | 35% academic improvement",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       name: "Zero Hunger",
+    //       icon: "bi-basket",
+    //       programs: [
+    //         {
+    //           title: "Community Feeding Outreaches - 15+ Events",
+    //           description:
+    //             "Organized 15 community feeding outreaches throughout 2024 distributing nutritious meals, grains, and protein sources to vulnerable families and elderly persons. Each outreach reached 100-150 beneficiaries with specially prepared meals and food packages.",
+    //           images: [
+    //             "./assets/images/fruitgift.png",
+    //             "./assets/images/community.jpg",
+    //           ],
+    //           video: "https://www.youtube.com/embed/kffacxfA7g4",
+    //           results:
+    //             "15+ outreaches | 1,800+ meals served | 500+ food packages distributed",
+    //         },
+    //         {
+    //           title: "Agricultural Support & Farming Relief",
+    //           description:
+    //             "Provided farming tools, seeds, and agricultural training to 20+ farming families. Support included soil analysis, modern farming techniques, storage solutions, and market linkage to improve food production and household income.",
+    //           images: ["./assets/images/shovel.png"],
+    //           video: "https://www.youtube.com/embed/nfWlot6_LSw",
+    //           results:
+    //             "20+ farming families equipped | 40% increase in yields | Sustainable food security improved",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
+
+
+    // {
+    //   year: "2022",
+    //   summary:
+    //     "15+ Outreaches, 50+ Trainings, 20+ Scholarships, 1358+ Healthcare support and 20+ Family Support",
+    //   sections: [
+    //     {
+    //       name: "Health & Wellness",
+    //       icon: "bi-heart-pulse",
+    //       programs: [
+    //         {
+    //           title: "Community Medical Outreach - September 2024",
+    //           description:
+    //             "Organized a comprehensive medical outreach at Ikot Akpamba providing free healthcare consultation, blood pressure checks, diabetes screening, and medication distribution to over 300 community members. Our team of healthcare professionals offered preventive care education and referred critical cases to proper medical facilities.",
+    //           images: [
+    //             "./assets/images/patientward.jpg",
+    //             "./assets/images/patientonbed.jpg",
+    //           ],
+    //           video: "https://www.youtube.com/embed/St9pE2bv0zQ",
+    //           results: "300+ people screened | 45+ medications distributed",
+    //         },
+    //         {
+    //           title: "Mobile Health Clinic - Monthly Initiative",
+    //           description:
+    //             "Launched a series of mobile health clinics visiting 5 different communities throughout 2024. Services included maternal health consultations, child nutrition programs, disease prevention seminars, and emergency medical aid.",
+    //           images: ["./assets/images/supportlove.png"],
+    //           video:
+    //             "https://www.youtube.com/embed/-58OpkGumi8?si=PM8RCw4xRBwSnGlJ",
+    //           results:
+    //             "1358+ people received care | 12+ preventive programs conducted",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       name: "Empowerment",
+    //       icon: "bi-briefcase",
+    //       programs: [
+    //         {
+    //           title: "Women's Vocational Skills Training - Ongoing",
+    //           description:
+    //             "Empowered over 50 women through intensive vocational training programs in tailoring, hairdressing, soap-making, and food processing. Participants received hands-on training, certification, and starter kits to begin their own enterprises.",
+    //           images: ["./assets/images/trainingicon.png"],
+    //           video: "https://www.youtube.com/embed/Ks-_Mh1QhMc",
+    //           results:
+    //             "50+ women trained | 35+ started small businesses | 120+ jobs created",
+    //         },
+    //         {
+    //           title: "Widow & Vulnerable Support Program",
+    //           description:
+    //             "Built a new house for a widow and her blind son, completed in August 2024. Also distributed wrappers, rice, tomatoes, cash, and other essential items to widows and vulnerable families at Ikot Akpamba during Christmas 2024.",
+    //           images: [
+    //             "./assets/images/oldhouse.png",
+    //             "./assets/images/newhouse.png",
+    //             "./assets/images/widow.jpg",
+    //             "./assets/images/widow2.jpg",
+    //           ],
+    //           video: "https://www.youtube.com/embed/e-IWRmpefzE",
+    //           results:
+    //             "18+ families supported | 1 home constructed | 250+ gift packages distributed",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       name: "Education",
+    //       icon: "bi-book",
+    //       programs: [
+    //         {
+    //           title: "Scholarship Program - 2024 Academic Year",
+    //           description:
+    //             "Provided educational scholarships to 20+ underprivileged students across primary, secondary, and tertiary institutions. Support covered tuition fees, learning materials, and uniforms enabling these students to continue their education without financial barriers.",
+    //           images: [
+    //             "./assets/images/student.webp",
+    //             "./assets/images/academy.png",
+    //           ],
+    //           video: "https://www.youtube.com/embed/xo1VjT_q7_w",
+    //           results:
+    //             "20+ students sponsored | 100% school attendance rate | 3 progressed to tertiary",
+    //         },
+    //         {
+    //           title: "School Feeding & Learning Materials Initiative",
+    //           description:
+    //             "Launched a comprehensive school feeding program providing nutritious meals to 200+ students daily. Alongside nutrition, distributed learning materials including books, pens, notebooks, and educational resources to enhance classroom learning.",
+    //           images: [
+    //             "./assets/images/secsch.jpg",
+    //             "./assets/images/feedkid.webp",
+    //           ],
+    //           video: "https://www.youtube.com/embed/9bZkp7q19f0",
+    //           results:
+    //             "200+ students fed daily | 5,000+ learning materials distributed | 35% academic improvement",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       name: "Zero Hunger",
+    //       icon: "bi-basket",
+    //       programs: [
+    //         {
+    //           title: "Community Feeding Outreaches - 15+ Events",
+    //           description:
+    //             "Organized 15 community feeding outreaches throughout 2024 distributing nutritious meals, grains, and protein sources to vulnerable families and elderly persons. Each outreach reached 100-150 beneficiaries with specially prepared meals and food packages.",
+    //           images: [
+    //             "./assets/images/fruitgift.png",
+    //             "./assets/images/community.jpg",
+    //           ],
+    //           video: "https://www.youtube.com/embed/kffacxfA7g4",
+    //           results:
+    //             "15+ outreaches | 1,800+ meals served | 500+ food packages distributed",
+    //         },
+    //         {
+    //           title: "Agricultural Support & Farming Relief",
+    //           description:
+    //             "Provided farming tools, seeds, and agricultural training to 20+ farming families. Support included soil analysis, modern farming techniques, storage solutions, and market linkage to improve food production and household income.",
+    //           images: ["./assets/images/shovel.png"],
+    //           video: "https://www.youtube.com/embed/nfWlot6_LSw",
+    //           results:
+    //             "20+ farming families equipped | 40% increase in yields | Sustainable food security improved",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
   ];
 
   // Build reports accordion. Use an explicit builder so we run whether DOMContentLoaded
@@ -1111,7 +1107,7 @@ function normalizePath(pathname) {
 
         const body = document.createElement("div");
         body.className = "accordion-body";
-        body.innerHTML = `<h5 class="report-summary">${report.summary}</h5>`;
+        // body.innerHTML = `<h5 class="report-summary">${report.summary}</h5>`;
 
         // add anchor targets for direct links from program pages
         const yearAnchor = document.createElement("div");
